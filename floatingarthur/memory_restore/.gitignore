@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.py[cod]
+instance/
+uploads/
+outputs/
+.env
+*.log
+
+# The active CLIP/DINOv2 weights are kept in cache/ and tracked with Git LFS.
+# This Python 3.10 wheel bundle is not used by the current Python 3.12 runtime.
+vendor/location_matching_python/

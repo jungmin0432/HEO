@@ -1,0 +1,6 @@
+# Install after requirements.txt in the GPU runtime only.
+basicsr==1.4.2
+opencv-python-headless
+
+# Install the checked-in official vendor source without its optional face-enhancement dependencies.
+# pip install --no-deps -e vendor/Real-ESRGAN

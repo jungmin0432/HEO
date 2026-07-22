@@ -1,0 +1,1468 @@
+{
+  "version": "starter-2026-07",
+  "coordinate_policy": "Station-area anchors only. Never present them as exact historical camera positions.",
+  "assets": [
+    {
+      "asset_id": "euljiro_entrance_surroundings_1983/111947318/2015112202245948277.JPG",
+      "relative_path": "euljiro_entrance_surroundings_1983/111947318/2015112202245948277.JPG",
+      "sha256": "9a2a32c0178f114d97c1f1c96a7e6fca145d257bd92aa34800731509008859b7",
+      "archive": {
+        "title": "을지로입구 주변 촬영",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/4356"
+      },
+      "zone": "euljiro-entrance",
+      "landmark_tags": [
+        "을지로입구역",
+        "을지로입구",
+        "지상 출입구",
+        "지하 연결"
+      ],
+      "location": {
+        "latitude": 37.566111,
+        "longitude": 126.9825,
+        "radius_m": 220,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_entrance_surroundings_1983/111947318/2015112202245950134.JPG",
+      "relative_path": "euljiro_entrance_surroundings_1983/111947318/2015112202245950134.JPG",
+      "sha256": "9f7c4b378c4dd0417a9f05ed6620a16e00efc3c7f7cd870157788abe3dd3af6f",
+      "archive": {
+        "title": "을지로입구 주변 촬영",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/4356"
+      },
+      "zone": "euljiro-entrance",
+      "landmark_tags": [
+        "을지로입구역",
+        "을지로입구",
+        "지상 출입구",
+        "지하 연결"
+      ],
+      "location": {
+        "latitude": 37.566111,
+        "longitude": 126.9825,
+        "radius_m": 220,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_entrance_surroundings_1983/111947318/2015112202245952068.JPG",
+      "relative_path": "euljiro_entrance_surroundings_1983/111947318/2015112202245952068.JPG",
+      "sha256": "de4ae0a11a0cbad12472f82621bf5658295be35011dd9d460b8b7878c40343ef",
+      "archive": {
+        "title": "을지로입구 주변 촬영",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/4356"
+      },
+      "zone": "euljiro-entrance",
+      "landmark_tags": [
+        "을지로입구역",
+        "을지로입구",
+        "지상 출입구",
+        "지하 연결"
+      ],
+      "location": {
+        "latitude": 37.566111,
+        "longitude": 126.9825,
+        "radius_m": 220,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_entrance_surroundings_1983/111947318/2015112202245953925.JPG",
+      "relative_path": "euljiro_entrance_surroundings_1983/111947318/2015112202245953925.JPG",
+      "sha256": "1752ec80180b4d259e7aace0dc8215ae11080f88fa9136dd87d68fbce7648fcc",
+      "archive": {
+        "title": "을지로입구 주변 촬영",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/4356"
+      },
+      "zone": "euljiro-entrance",
+      "landmark_tags": [
+        "을지로입구역",
+        "을지로입구",
+        "지상 출입구",
+        "지하 연결"
+      ],
+      "location": {
+        "latitude": 37.566111,
+        "longitude": 126.9825,
+        "radius_m": 220,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_entrance_surroundings_1983/111947318/2015112202245955812.JPG",
+      "relative_path": "euljiro_entrance_surroundings_1983/111947318/2015112202245955812.JPG",
+      "sha256": "11879fceaf18ad661d0bf33018a662498a8f600adc9e29bb12b041090bc06ad3",
+      "archive": {
+        "title": "을지로입구 주변 촬영",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/4356"
+      },
+      "zone": "euljiro-entrance",
+      "landmark_tags": [
+        "을지로입구역",
+        "을지로입구",
+        "지상 출입구",
+        "지하 연결"
+      ],
+      "location": {
+        "latitude": 37.566111,
+        "longitude": 126.9825,
+        "radius_m": 220,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_entrance_surroundings_1983/111947318/2015112202245957731.JPG",
+      "relative_path": "euljiro_entrance_surroundings_1983/111947318/2015112202245957731.JPG",
+      "sha256": "a65d166989466afcff3c65e6f158a55adb965972e520b01bdb6d67ff475b1dc4",
+      "archive": {
+        "title": "을지로입구 주변 촬영",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/4356"
+      },
+      "zone": "euljiro-entrance",
+      "landmark_tags": [
+        "을지로입구역",
+        "을지로입구",
+        "지상 출입구",
+        "지하 연결"
+      ],
+      "location": {
+        "latitude": 37.566111,
+        "longitude": 126.9825,
+        "radius_m": 220,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_entrance_surroundings_1983/111947318/2015112707240640289.JPG",
+      "relative_path": "euljiro_entrance_surroundings_1983/111947318/2015112707240640289.JPG",
+      "sha256": "078d3dedb56453f58075c15df7b1192bb983cbdbcb9dae3094cb39646a6a3b60",
+      "archive": {
+        "title": "을지로입구 주변 촬영",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/4356"
+      },
+      "zone": "euljiro-entrance",
+      "landmark_tags": [
+        "을지로입구역",
+        "을지로입구",
+        "지상 출입구",
+        "지하 연결"
+      ],
+      "location": {
+        "latitude": 37.566111,
+        "longitude": 126.9825,
+        "radius_m": 220,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_entrance_surroundings_1983/111947318/2015112707240641014.JPG",
+      "relative_path": "euljiro_entrance_surroundings_1983/111947318/2015112707240641014.JPG",
+      "sha256": "09f1916e83ec86d474d4e9b394920588bbe78c2abfc55f78f97129b5e6ca8f18",
+      "archive": {
+        "title": "을지로입구 주변 촬영",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/4356"
+      },
+      "zone": "euljiro-entrance",
+      "landmark_tags": [
+        "을지로입구역",
+        "을지로입구",
+        "지상 출입구",
+        "지하 연결"
+      ],
+      "location": {
+        "latitude": 37.566111,
+        "longitude": 126.9825,
+        "radius_m": 220,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_entrance_surroundings_1983/111947318/2015113020243907060.JPG",
+      "relative_path": "euljiro_entrance_surroundings_1983/111947318/2015113020243907060.JPG",
+      "sha256": "bf16eee87bb0661c4d57faf138b0af6827c0c9f072ca08914a8d7c77452864ca",
+      "archive": {
+        "title": "을지로입구 주변 촬영",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/4356"
+      },
+      "zone": "euljiro-entrance",
+      "landmark_tags": [
+        "을지로입구역",
+        "을지로입구",
+        "지상 출입구",
+        "지하 연결"
+      ],
+      "location": {
+        "latitude": 37.566111,
+        "longitude": 126.9825,
+        "radius_m": 220,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_entrance_surroundings_1983/111947318/2015113020243907840.JPG",
+      "relative_path": "euljiro_entrance_surroundings_1983/111947318/2015113020243907840.JPG",
+      "sha256": "db728e6b31ba7836864382d324cf2bc2e50ff8495db122936e2863a20c790fdc",
+      "archive": {
+        "title": "을지로입구 주변 촬영",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/4356"
+      },
+      "zone": "euljiro-entrance",
+      "landmark_tags": [
+        "을지로입구역",
+        "을지로입구",
+        "지상 출입구",
+        "지하 연결"
+      ],
+      "location": {
+        "latitude": 37.566111,
+        "longitude": 126.9825,
+        "radius_m": 220,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_entrance_surroundings_1983/111947318/2015113020243908652.JPG",
+      "relative_path": "euljiro_entrance_surroundings_1983/111947318/2015113020243908652.JPG",
+      "sha256": "1592926d162a43d947ce97e5efb4accebb976658176f901f585d42ddf6f5504d",
+      "archive": {
+        "title": "을지로입구 주변 촬영",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/4356"
+      },
+      "zone": "euljiro-entrance",
+      "landmark_tags": [
+        "을지로입구역",
+        "을지로입구",
+        "지상 출입구",
+        "지하 연결"
+      ],
+      "location": {
+        "latitude": 37.566111,
+        "longitude": 126.9825,
+        "radius_m": 220,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_entrance_surroundings_1983/111947318/2015120321240357154.JPG",
+      "relative_path": "euljiro_entrance_surroundings_1983/111947318/2015120321240357154.JPG",
+      "sha256": "d386314f96d58a8022e5aa76ddd9c6a04fd34dd97fe20c2601142c20e2d9777e",
+      "archive": {
+        "title": "을지로입구 주변 촬영",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/4356"
+      },
+      "zone": "euljiro-entrance",
+      "landmark_tags": [
+        "을지로입구역",
+        "을지로입구",
+        "지상 출입구",
+        "지하 연결"
+      ],
+      "location": {
+        "latitude": 37.566111,
+        "longitude": 126.9825,
+        "radius_m": 220,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_entrance_underpass_construction_1976/111946172/2015112114241122006.JPG",
+      "relative_path": "euljiro_entrance_underpass_construction_1976/111946172/2015112114241122006.JPG",
+      "sha256": "12a1f6c4d5a9ce699a37f4f4ec445519a71a77dd988200a32284450203f356b1",
+      "archive": {
+        "title": "을지로입구 지하도 착공",
+        "year": 1976,
+        "source_url": "https://archives.seoul.go.kr/item/2610"
+      },
+      "zone": "euljiro-entrance",
+      "landmark_tags": [
+        "을지로입구역",
+        "지하도",
+        "공사",
+        "출입구",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.566111,
+        "longitude": 126.9825,
+        "radius_m": 220,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_entrance_underpass_construction_1976/111946172/2015112114241125782.JPG",
+      "relative_path": "euljiro_entrance_underpass_construction_1976/111946172/2015112114241125782.JPG",
+      "sha256": "16fcdd2b64431c7e4db36cac4713a38a27a4959579129dd0e29a9a32ad5939ce",
+      "archive": {
+        "title": "을지로입구 지하도 착공",
+        "year": 1976,
+        "source_url": "https://archives.seoul.go.kr/item/2610"
+      },
+      "zone": "euljiro-entrance",
+      "landmark_tags": [
+        "을지로입구역",
+        "지하도",
+        "공사",
+        "출입구",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.566111,
+        "longitude": 126.9825,
+        "radius_m": 220,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_entrance_underpass_construction_1976/111946172/2015113017240421485.JPG",
+      "relative_path": "euljiro_entrance_underpass_construction_1976/111946172/2015113017240421485.JPG",
+      "sha256": "7cbc4baf23ba8ce37c046c1c3934f0bb63810b20c81e80cb5a973972288b7e5a",
+      "archive": {
+        "title": "을지로입구 지하도 착공",
+        "year": 1976,
+        "source_url": "https://archives.seoul.go.kr/item/2610"
+      },
+      "zone": "euljiro-entrance",
+      "landmark_tags": [
+        "을지로입구역",
+        "지하도",
+        "공사",
+        "출입구",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.566111,
+        "longitude": 126.9825,
+        "radius_m": 220,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_entrance_underpass_construction_1976/111946172/2015113017240422358.JPG",
+      "relative_path": "euljiro_entrance_underpass_construction_1976/111946172/2015113017240422358.JPG",
+      "sha256": "9011d773b5248bb0e96ff41d68b164f7ec236525a4cfec839862bc909475681d",
+      "archive": {
+        "title": "을지로입구 지하도 착공",
+        "year": 1976,
+        "source_url": "https://archives.seoul.go.kr/item/2610"
+      },
+      "zone": "euljiro-entrance",
+      "landmark_tags": [
+        "을지로입구역",
+        "지하도",
+        "공사",
+        "출입구",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.566111,
+        "longitude": 126.9825,
+        "radius_m": 220,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_entrance_underpass_construction_1976/111946172/2015113017240423060.JPG",
+      "relative_path": "euljiro_entrance_underpass_construction_1976/111946172/2015113017240423060.JPG",
+      "sha256": "47843641800db83e5820d5c2298266ff9dc5079156465527b11af48cca62a54d",
+      "archive": {
+        "title": "을지로입구 지하도 착공",
+        "year": 1976,
+        "source_url": "https://archives.seoul.go.kr/item/2610"
+      },
+      "zone": "euljiro-entrance",
+      "landmark_tags": [
+        "을지로입구역",
+        "지하도",
+        "공사",
+        "출입구",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.566111,
+        "longitude": 126.9825,
+        "radius_m": 220,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_entrance_underpass_construction_1976/111946172/2015120322240251327.JPG",
+      "relative_path": "euljiro_entrance_underpass_construction_1976/111946172/2015120322240251327.JPG",
+      "sha256": "75720f9f0acdec31a7ae3c6a8bf9033cbf39c44025054951a65f5391f60de7f0",
+      "archive": {
+        "title": "을지로입구 지하도 착공",
+        "year": 1976,
+        "source_url": "https://archives.seoul.go.kr/item/2610"
+      },
+      "zone": "euljiro-entrance",
+      "landmark_tags": [
+        "을지로입구역",
+        "지하도",
+        "공사",
+        "출입구",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.566111,
+        "longitude": 126.9825,
+        "radius_m": 220,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015112200245639980.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015112200245639980.JPG",
+      "sha256": "69d0c51285e895159dc0af4b671f836ea7439439dfe5ec4c99cd0d5e03be5212",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015112200245641914.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015112200245641914.JPG",
+      "sha256": "058d9066e8b53bb8be1cf8821f4be169dea22b6affac2a5ac68ad48fd72f7c42",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015112200245643911.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015112200245643911.JPG",
+      "sha256": "4fca723808c41e9114f8e241118c5776b91079de5c630c87641c0d9716f86ca8",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015112200245645627.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015112200245645627.JPG",
+      "sha256": "96f2f4922048e9777f10107960763e4587d3bb62f9ff9efcd720bf355ed7353a",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015112200245647343.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015112200245647343.JPG",
+      "sha256": "2acf63d0e5bfe239d594c39bacf56411b2a61e67df78cc7cc55d6005eb2e5838",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015112200245649168.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015112200245649168.JPG",
+      "sha256": "d03c9380df7f57d045b34fccc83cd4c2a4837adeb59289bbb4e30e6d7a003ff2",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015112200245651024.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015112200245651024.JPG",
+      "sha256": "6f398594500d21877e4db9cfbb4d6be6b412c2dd1717287b6c3cddad1944bfdf",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015112200245652834.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015112200245652834.JPG",
+      "sha256": "0135af395339b8dc1c8eed6667a3633dd84e48f769b91b13a304fdf480c9c2ae",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015112200245655455.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015112200245655455.JPG",
+      "sha256": "fe33a5af1b9942b5e96b7e5eb15448900bc261969c63121eb76f1a21fde3109c",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015112200245657717.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015112200245657717.JPG",
+      "sha256": "27497a7e6c7b9db24690956b986ed455cda73cf13597e285989f30dc41801be4",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015112201243917370.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015112201243917370.JPG",
+      "sha256": "a883de927eb78ec42b8606beed4a97bb6d38433421f93cf4c632e84ce8df7b3b",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015112201243920085.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015112201243920085.JPG",
+      "sha256": "8fbdb81b49361fb56a03bbefe78b95e6ba113e3d87284c0fe42308421d6bb9a4",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015112201243923002.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015112201243923002.JPG",
+      "sha256": "1c266cca3487774c155bd2de8a7b35acedd4518081dbd33d4cc292c5361198ea",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015112201243925357.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015112201243925357.JPG",
+      "sha256": "bbf94fe2577e783bb1f6818a42d855ac544cd4d2cc135701668ef2cd6a8dacd1",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015112201243927526.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015112201243927526.JPG",
+      "sha256": "8407e3ba04a801b9a478c8e696218c6d22d7eba0ccdd1e34abb11dc535b2d763",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015112201243930334.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015112201243930334.JPG",
+      "sha256": "2966b72a1d4067d06b53c1c80557d5890ce78ac9756bab465ac43d036c5b4732",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015112201243932767.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015112201243932767.JPG",
+      "sha256": "67c6e90c24dfff0bb9288253843d1df5b33366b0f702e867f0cb2a80578e907f",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015112201243935092.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015112201243935092.JPG",
+      "sha256": "766f6975c32dcf8f0a2b43f6d40341288813b9dc98064421bef692368d3ca214",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015112201243937385.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015112201243937385.JPG",
+      "sha256": "9986c7486d77973888a54439fb447c73e877dbfa36ba834cffb2b98c69769a8b",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015112706242648723.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015112706242648723.JPG",
+      "sha256": "6d882aba9af128fd84e1382276f5eb18a35dc898e71f2323ec86b71bc6781afd",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015112706242650261.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015112706242650261.JPG",
+      "sha256": "26664dc4fa5b6ed2b84015968abc82943eea881cbc8bb0bd513f78e19559b3fd",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015112706242651090.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015112706242651090.JPG",
+      "sha256": "9ed7ef38d77b63920399a33d378bd1d6e9ccc3abb6f9384fdbcda239a75b45d6",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015112706245614505.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015112706245614505.JPG",
+      "sha256": "e43cf57a42a9f8bba38e04086048e4abee6abef52dd660a028d3984f04a48bee",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015112706245615279.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015112706245615279.JPG",
+      "sha256": "7bdbbb891309a74cfde610ccd8e2c4568eb93e62f6ef1dbe4d3dec0a983944d2",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015112706245616158.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015112706245616158.JPG",
+      "sha256": "6c502b96493502f08c7a3d0d9057e2aa50f6cc218530d966496d06d98bf5e95a",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015113022242710993.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015113022242710993.JPG",
+      "sha256": "f5868d4cfbbda94354d332de148948e143c638aef2ca68f0082f2c04fcc1e44d",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015113022242711773.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015113022242711773.JPG",
+      "sha256": "ccdf9879a6667384c66898d14c85fa667122f1b9c36d5db19c39741f09e83c25",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015113022242746312.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015113022242746312.JPG",
+      "sha256": "4f4b6f6f7c62fe2a99938bc317504d2326814f3d7db942441934292797b0a33f",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015113022242747981.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015113022242747981.JPG",
+      "sha256": "9e25c3fd7aa3804c146ca42298e83af2e3fa5330ad35f4600a8418033924b103",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015113022242749369.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015113022242749369.JPG",
+      "sha256": "4aea81f0479b768b65244a705428ce64e0eaa494515dd2e009b7cdda02ba1558",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015113022243020144.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015113022243020144.JPG",
+      "sha256": "93efdf0f4ee9422a4788c64e34df6caefd5b6b8712321c43585dec144db04780",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015113022243020799.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015113022243020799.JPG",
+      "sha256": "9acc6da2e8d5ef448ada335e90110f86d6c9bc1e2d55a42761969c4cb5951539",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015113022243021563.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015113022243021563.JPG",
+      "sha256": "2c9280d82820c9a72feeaf3367d373e1f932fb17359ff99be6216388a64f83fc",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015113022243022374.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015113022243022374.JPG",
+      "sha256": "9d57f0688d6f386cc6149a7a0a24de2891dcc8a36bb11e9602bd3fb5637e8865",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015113022243024012.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015113022243024012.JPG",
+      "sha256": "4fc2e4531d2be2c2874f96a277b526a65e9985a06b34916840e56df283b71a9c",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015113022243100220.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015113022243100220.JPG",
+      "sha256": "9f23449bc5074ef34dff5dffac58a4cc1efade0f236373e356689ba3a21950e7",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015120321241311753.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015120321241311753.JPG",
+      "sha256": "d79101fd30cdc9810e5e81e2769a11a0f17ea8fb3a2b9a4bb9e002002daf2a97",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    },
+    {
+      "asset_id": "euljiro_line2_opening_1983/111937895/2015120321244058944.JPG",
+      "relative_path": "euljiro_line2_opening_1983/111937895/2015120321244058944.JPG",
+      "sha256": "9954ed83c1fd91fac9fb5e2e7fe78463a063c9204b61a3e1a5ecddd17f7e577d",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로구간 개통",
+        "year": 1983,
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157"
+      },
+      "zone": "euljiro-3ga",
+      "landmark_tags": [
+        "을지로3가역",
+        "을지로2호선",
+        "지하 연결 통로",
+        "지하상가"
+      ],
+      "location": {
+        "latitude": 37.56629,
+        "longitude": 126.99278,
+        "radius_m": 240,
+        "scope": "station_area_anchor",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22534/F/1/datasetView.do"
+      },
+      "verification_level": "STATION_AREA_ANCHOR",
+      "matching_note": "역세권 앵커는 후보 축소용이며 과거 사진의 정확한 촬영 지점을 의미하지 않습니다."
+    }
+  ]
+}

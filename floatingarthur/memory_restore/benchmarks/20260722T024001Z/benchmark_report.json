@@ -1,0 +1,35 @@
+{
+  "created_at": "2026-07-22T02:40:01.870116+00:00",
+  "place_id": "euljiro-line2-opening-1983-corridor",
+  "input_profile": {
+    "width": 1055,
+    "height": 1051,
+    "megapixels": 1.109
+  },
+  "recommended_ai_plan": {
+    "plan_id": "medium-resolution-x2",
+    "model_name": "RealESRGAN_x2plus",
+    "outscale": 2,
+    "label": "중간 해상도 AI 복원 후보",
+    "reason": "0.5~2.0MP 입력은 과도한 확대보다 x2 모델을 우선 비교한다.",
+    "requires_human_review": true
+  },
+  "results": [
+    {
+      "candidate": "Pillow baseline",
+      "test_type": "controlled degradation",
+      "source_filename": "2015112201243932767.JPG",
+      "metrics": {
+        "psnr_db": 25.45,
+        "ssim": 0.80982,
+        "edge_strength": 3.134
+      },
+      "processing_time_ms": 21.75,
+      "note": "Real-ESRGAN 결과가 준비되면 동일 degraded_input.jpg와 reference.jpg로 비교한다."
+    }
+  ],
+  "selection_gate": {
+    "rule": "AI 후보는 같은 controlled degradation에서 Pillow baseline보다 SSIM +0.01 또는 PSNR +0.3dB를 만족할 때만 기본 후보로 제시한다.",
+    "human_review": "실제 역사사진에서는 정답 원본이 없으므로 원본·AI 결과·경고문을 함께 보며 운영자가 최종 선택한다."
+  }
+}

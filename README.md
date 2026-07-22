@@ -43,3 +43,10 @@ QR 게이트 코드: `E1-01`, `E3-01`, `E3-02`, `E4-01`, `E4-02`, `DDP-01`
 cd backend
 python -m unittest test_route_engine -v
 ```
+
+## 추가 모듈
+
+- `floatingarthur/memory_restore/`: AI 시간제작소의 Flask API, 반응형 프로토타입, 문서, 사전 계산 캐시, 모델 가중치
+- `floatingarthur/photos/`: 공개 기록 사진과 시현용 이미지
+
+해당 모듈의 실행 방법과 Git LFS 안내는 [`floatingarthur/memory_restore/README.md`](floatingarthur/memory_restore/README.md)를 따른다.
