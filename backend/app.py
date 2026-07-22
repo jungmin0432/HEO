@@ -23,6 +23,10 @@ def create_app() -> Flask:
     def demo_page():
         return send_from_directory("web", "index.html")
 
+    @app.get("/photobooth")
+    def photobooth_page():
+        return send_from_directory("web", "photobooth.html")
+
     @app.get("/api/health")
     def health():
         return jsonify({"status": "ok", "service": "서울 아랫길 지하상가 QR 코스추천 API"})

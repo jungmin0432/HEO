@@ -22,8 +22,10 @@ QR 게이트 코드: `E1-01`, `E3-01`, `E3-02`, `E4-01`, `E4-02`, `DDP-01`
 | `backend/app.py` | Flask API (`/api/ai/routes/recommend` 등) + 프론트 서빙 |
 | `backend/route_engine.py` | 영업시간·도보시간 필터 + Dijkstra 기반 코스 계산 (핵심 로직) |
 | `backend/ai_interpreter.py` | 자유 문장 → 조건(JSON) 해석 (OpenAI 있으면 사용, 없으면 규칙 기반 fallback) |
-| `backend/route_database.py`, `build_route_database.py` | 점포 DB 조회/구축용 (선택 사항 — 원본 CSV가 없어 이번 폴더에는 DB가 없습니다. `/api/stores`, `/api/data/status`만 영향받고 경로 추천 자체는 DB 없이 동작합니다) |
+| `backend/route_database.py`, `build_route_database.py` | 점포 DB 조회/구축용 |
+| `backend/data/euljiro_route_20260722_project.db` | 실제 점포 데이터베이스 (공식 점포 161개 포함). `backend/data/euljiro_underground_directory_hours.csv`가 원본 소스이며, `python build_route_database.py`로 재생성 가능 |
 | `backend/web/index.html` | 새로 디자인한 모바일 프론트엔드 (단일 파일, 외부 빌드 불필요) |
+| `backend/web/photobooth.html` | 서울 시간네컷 — 브랜드 프레임을 씌운 4컷 촬영 페이지 (`/photobooth`) |
 
 ## 디자인 방향
 

@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0c1f34" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>서울 시간네컷 | 서울 아랫길 600년</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700&family=Pretendard:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy-950:#081527; --navy-900:#0c1f34; --navy-800:#123049; --navy-700:#1a4162;
+  --gold-300:#eed9ab; --gold-400:#ddbd77; --gold-500:#c9a24b; --gold-600:#a97f2e;
+  --cream-50:#fbf7ef; --cream-100:#f4ecdc; --paper:#fffcf6;
+  --ink-900:#1b2130; --ink-700:#3b4453; --ink-500:#6b7686; --ink-300:#a7b0bd;
+  --line:#e9e0cf; --line-soft:#efe8d9;
+  --shadow-card:0 10px 30px -14px rgba(11,25,45,.28);
+  --shadow-pop:0 18px 46px -18px rgba(11,25,45,.4);
+  --sans:'Pretendard','Noto Sans KR',-apple-system,BlinkMacSystemFont,'Malgun Gothic',sans-serif;
+  --serif:'Noto Serif KR','Nanum Myeongjo',serif;
+  --safe-t:env(safe-area-inset-top,0px); --safe-b:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{margin:0;background:#e7e2d6;color:var(--ink-900);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+button{font-family:inherit}
+.icon{width:1em;height:1em;display:inline-block;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;vertical-align:-0.15em}
+
+.app{position:relative;width:min(100%,430px);min-height:100vh;min-height:100dvh;margin:0 auto;background:var(--navy-950);overflow:hidden;color:#fff}
+@media (min-width:560px){
+  body{display:flex;justify-content:center;padding:28px 0}
+  .app{min-height:min(100dvh,900px);height:min(100dvh,900px);border-radius:34px;box-shadow:0 30px 70px -22px rgba(8,20,38,.45),0 0 0 10px #0c1f3410}
+}
+.scroll{height:100%;overflow-y:auto;overscroll-behavior-y:contain;scrollbar-width:none}
+.scroll::-webkit-scrollbar{display:none}
+
+.topbar{
+  position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;
+  padding:calc(14px + var(--safe-t)) 18px 12px;
+}
+.brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:13px;color:#fdf6e6}
+.brand .mark{width:24px;height:24px;border-radius:7px;background:linear-gradient(155deg,var(--gold-400),var(--gold-600));display:grid;place-items:center;color:var(--navy-950);font-size:12px;flex:none}
+.brand small{display:block;font-weight:600;color:#b9c3d2;font-size:9.5px;margin-top:1px}
+.module-chip{font-size:10px;font-weight:700;color:var(--gold-300);background:#ffffff14;border:1px solid #ffffff22;padding:5px 10px;border-radius:99px}
+
+/* ===== Screen 1: intro ===== */
+#screen-pick{padding:4px 20px 40px}
+.pick-hero h1{font-family:var(--serif);font-size:24px;font-weight:700;line-height:1.35;margin:8px 0 6px;color:#fdf6e6}
+.pick-hero p{margin:0;color:#b9c3d2;font-size:12.5px;line-height:1.6}
+
+.frame-preview{
+  margin-top:22px;border-radius:18px;overflow:hidden;position:relative;
+  background:linear-gradient(155deg,#1a2c46,#0c1830 75%);
+  border:2px solid #ffffff14;padding:16px;
+}
+.frame-preview-inner{
+  border-radius:12px;border:2px solid var(--gold-500);
+  aspect-ratio:1/1;position:relative;
+  background:repeating-linear-gradient(135deg,#ffffff08 0 2px,transparent 2px 14px);
+  display:flex;align-items:center;justify-content:center;
+}
+.frame-preview-inner span{font-size:11px;color:#8ea0ba;font-weight:700}
+.fp-corner{position:absolute;width:16px;height:16px;border-color:var(--gold-400);border-style:solid;border-width:0}
+.fp-tl{top:-2px;left:-2px;border-top-width:3px;border-left-width:3px;border-top-left-radius:8px}
+.fp-tr{top:-2px;right:-2px;border-top-width:3px;border-right-width:3px;border-top-right-radius:8px}
+.fp-bl{bottom:-2px;left:-2px;border-bottom-width:3px;border-left-width:3px;border-bottom-left-radius:8px}
+.fp-br{bottom:-2px;right:-2px;border-bottom-width:3px;border-right-width:3px;border-bottom-right-radius:8px}
+.frame-preview-cap{margin-top:10px;text-align:center;font-size:10.5px;color:#96a3b6;font-weight:600}
+
+.pick-cta{
+  width:100%;margin-top:22px;border:0;border-radius:15px;padding:16px;
+  background:linear-gradient(135deg,var(--gold-400),var(--gold-600));color:#241a05;
+  font-size:15px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;
+  box-shadow:0 16px 30px -12px rgba(201,162,75,.45);
+}
+.pick-cta:active{transform:scale(.985)}
+.upload-alt{
+  display:block;text-align:center;margin-top:12px;color:#96a3b6;font-size:11.5px;font-weight:600;
+  text-decoration:underline;text-underline-offset:2px;background:none;border:0;width:100%;cursor:pointer;
+}
+
+/* ===== Screen 2: camera ===== */
+#screen-cam{display:none;position:absolute;inset:0;background:#000}
+#screen-cam.show{display:flex;flex-direction:column}
+.cam-stage{position:relative;flex:1;overflow:hidden;background:#000}
+video{width:100%;height:100%;object-fit:cover;display:block;transform:scaleX(-1)}
+.cam-flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+.cam-flash.flash{animation:flashpop .35s ease-out}
+@keyframes flashpop{0%{opacity:.9}100%{opacity:0}}
+.cam-count{
+  position:absolute;inset:0;display:none;align-items:center;justify-content:center;
+  font-family:var(--serif);font-size:120px;font-weight:700;color:#fff;text-shadow:0 6px 30px #00000090;
+  pointer-events:none;
+}
+.cam-count.show{display:flex}
+
+/* live frame overlay -- shows the same border the final print will have */
+.viewfinder-frame{position:absolute;inset:14px;pointer-events:none;z-index:4}
+.viewfinder-frame .vf-border{position:absolute;inset:0;border:2.5px solid var(--gold-500);border-radius:16px;opacity:.9}
+.viewfinder-frame .vf-corner{position:absolute;width:22px;height:22px;border-color:#fdf6e6;border-style:solid;border-width:0}
+.viewfinder-frame .vf-tl{top:-2px;left:-2px;border-top-width:3px;border-left-width:3px;border-top-left-radius:10px}
+.viewfinder-frame .vf-tr{top:-2px;right:-2px;border-top-width:3px;border-right-width:3px;border-top-right-radius:10px}
+.viewfinder-frame .vf-bl{bottom:-2px;left:-2px;border-bottom-width:3px;border-left-width:3px;border-bottom-left-radius:10px}
+.viewfinder-frame .vf-br{bottom:-2px;right:-2px;border-bottom-width:3px;border-right-width:3px;border-bottom-right-radius:10px}
+.viewfinder-frame .vf-brand{
+  position:absolute;top:10px;left:14px;display:flex;align-items:center;gap:5px;
+  font-family:var(--serif);font-weight:700;font-size:11px;color:#fdf6e6;text-shadow:0 1px 4px #00000090;
+}
+.viewfinder-frame .vf-brand b{color:var(--gold-400)}
+.viewfinder-frame .vf-emblem{
+  position:absolute;bottom:10px;right:12px;width:30px;height:30px;border-radius:50%;
+  border:1.5px solid var(--gold-400);display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-weight:700;font-size:9px;color:var(--gold-300);
+  text-shadow:0 1px 4px #00000090;
+}
+
+.cam-topline{
+  position:absolute;top:calc(14px + var(--safe-t));left:16px;right:16px;z-index:5;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.cam-badge{background:#00000066;backdrop-filter:blur(6px);color:#fdf6e6;font-size:11px;font-weight:800;padding:6px 11px;border-radius:99px;border:1px solid #ffffff22}
+.cam-close{width:32px;height:32px;border-radius:50%;background:#00000066;backdrop-filter:blur(6px);border:1px solid #ffffff22;color:#fff;display:grid;place-items:center;cursor:pointer}
+.shots-strip{position:absolute;left:24px;top:calc(58px + var(--safe-t));z-index:5;display:flex;flex-direction:column;gap:6px}
+.shots-strip .thumb{width:38px;height:38px;border-radius:8px;overflow:hidden;border:1.5px solid #ffffff55;background:#ffffff1a}
+.shots-strip .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.cam-bottom{
+  position:relative;padding:18px 20px calc(20px + var(--safe-b));
+  background:linear-gradient(0deg,#000 40%, transparent);
+  display:flex;align-items:center;justify-content:center;gap:26px;
+}
+.shutter{
+  width:74px;height:74px;border-radius:50%;background:#fff;border:4px solid #ffffff55;
+  cursor:pointer;display:grid;place-items:center;
+}
+.shutter:active{transform:scale(.93)}
+.shutter .dot{width:58px;height:58px;border-radius:50%;background:var(--gold-500)}
+.shutter:disabled{opacity:.5}
+.cam-side-btn{
+  width:44px;height:44px;border-radius:50%;background:#ffffff18;border:1px solid #ffffff2a;color:#fff;
+  display:grid;place-items:center;cursor:pointer;
+}
+.cam-error{
+  position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;
+  padding:30px;text-align:center;background:#0c1f34;z-index:6;
+}
+.cam-error.show{display:flex}
+.cam-error .icon{width:36px;height:36px;color:var(--gold-400);margin-bottom:14px}
+.cam-error p{color:#c9d3e0;font-size:12.5px;line-height:1.7;margin:0 0 16px}
+.cam-error label{
+  padding:12px 20px;border-radius:12px;background:var(--gold-500);color:#241a05;font-weight:800;font-size:13px;cursor:pointer;
+}
+
+/* ===== Screen 3: result ===== */
+#screen-result{display:none;position:absolute;inset:0;background:var(--paper);color:var(--ink-900)}
+#screen-result.show{display:block}
+.result-scroll{height:100%;overflow-y:auto;padding:calc(16px + var(--safe-t)) 20px calc(24px + var(--safe-b))}
+.result-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
+.back-btn{width:32px;height:32px;border-radius:10px;border:1px solid var(--line);background:var(--paper);color:var(--navy-900);display:grid;place-items:center;cursor:pointer}
+.result-title{font-size:13.5px;font-weight:800;color:var(--navy-950)}
+.strip-wrap{margin-top:16px;display:flex;justify-content:center}
+.strip-wrap canvas{width:100%;max-width:300px;border-radius:14px;box-shadow:var(--shadow-pop)}
+.result-actions{display:flex;gap:10px;margin-top:22px}
+.result-actions a, .result-actions button{
+  flex:1;border-radius:14px;padding:14px;font-weight:800;font-size:12.5px;text-align:center;text-decoration:none;
+  display:flex;align-items:center;justify-content:center;gap:6px;cursor:pointer;border:0;
+}
+.btn-gold{background:linear-gradient(135deg,var(--gold-400),var(--gold-600));color:#241a05}
+.btn-ghost{border:1px solid var(--line)!important;background:var(--paper);color:var(--navy-800)}
+.result-note{margin-top:16px;padding:11px 13px;border-radius:11px;background:var(--cream-100);color:var(--ink-500);font-size:11px;line-height:1.6;display:flex;gap:8px}
+.result-note .icon{flex:none;margin-top:1px;color:var(--gold-600)}
+
+.hidden-input{position:absolute;width:1px;height:1px;overflow:hidden;opacity:0}
+</style>
+</head>
+<body>
+<div class="app">
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8.5a2 2 0 0 1 2-2h1.2l1-1.8h7.6l1 1.8H18a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.6"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+      <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 13.7-5.7L20 8M20 12a8 8 0 0 1-13.7 5.7L4 16"/><path d="M20 4v4h-4M4 20v-4h4"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></symbol>
+      <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+      <symbol id="i-flip" viewBox="0 0 24 24"><path d="M17 3l3 3-3 3M7 21l-3-3 3-3"/><path d="M20 6H9a5 5 0 0 0-5 5M4 18h11a5 5 0 0 0 5-5"/></symbol>
+      <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6v.1"/></symbol>
+      <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3.5L21 19H3z"/><path d="M12 9.5v4M12 16v.1"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- ===== SCREEN 1: intro ===== -->
+  <div id="screen-pick" class="scroll">
+    <header class="topbar">
+      <div class="brand"><span class="mark">♧</span><span>서울 아랫길 <small>SEOUL ARATGIL · 600</small></span></div>
+      <span class="module-chip">시간네컷</span>
+    </header>
+    <div class="pick-hero">
+      <h1>오늘의 서울을<br/>네 장의 시간으로</h1>
+      <p>을지로 아랫길 브랜드 프레임 그대로, 네 컷을 이어 찍고 바로 완성된 시간네컷을 받아보세요.</p>
+    </div>
+    <div class="frame-preview">
+      <div class="frame-preview-inner">
+        <span>실시간 프레임 미리보기</span>
+        <div class="fp-corner fp-tl"></div><div class="fp-corner fp-tr"></div>
+        <div class="fp-corner fp-bl"></div><div class="fp-corner fp-br"></div>
+      </div>
+      <div class="frame-preview-cap">촬영 중에도 이 테두리가 화면에 그대로 보여요</div>
+    </div>
+    <button class="pick-cta" id="startBtn"><svg class="icon"><use href="#i-camera"/></svg>네컷 촬영 시작</button>
+    <button class="upload-alt" id="uploadAltBtn">카메라 대신 사진 파일로 만들기</button>
+    <input type="file" accept="image/*" multiple class="hidden-input" id="fileInput">
+  </div>
+
+  <!-- ===== SCREEN 2: camera ===== -->
+  <div id="screen-cam">
+    <div class="cam-stage">
+      <video id="video" autoplay playsinline muted></video>
+
+      <div class="viewfinder-frame">
+        <div class="vf-border"></div>
+        <div class="vf-corner vf-tl"></div><div class="vf-corner vf-tr"></div>
+        <div class="vf-corner vf-bl"></div><div class="vf-corner vf-br"></div>
+        <div class="vf-brand"><b>♧</b>서울 아랫길 600년</div>
+        <div class="vf-emblem">600</div>
+      </div>
+
+      <div class="cam-flash" id="camFlash"></div>
+      <div class="cam-count" id="camCount">3</div>
+      <div class="cam-topline">
+        <span class="cam-badge" id="shotBadge">1 / 4</span>
+        <button class="cam-close" id="camClose"><svg class="icon"><use href="#i-x"/></svg></button>
+      </div>
+      <div class="shots-strip" id="shotsStrip"></div>
+      <div class="cam-error" id="camError">
+        <svg class="icon"><use href="#i-alert"/></svg>
+        <p>카메라 권한을 확인할 수 없어요.<br/>브라우저 카메라 접근을 허용하거나, 사진 파일로 대신 만들어보세요.</p>
+        <label for="fileInput2">사진 파일 선택</label>
+        <input type="file" accept="image/*" multiple class="hidden-input" id="fileInput2">
+      </div>
+    </div>
+    <div class="cam-bottom">
+      <button class="cam-side-btn" id="camSwitch" title="카메라 전환"><svg class="icon"><use href="#i-flip"/></svg></button>
+      <button class="shutter" id="shutterBtn"><span class="dot"></span></button>
+      <span style="width:44px"></span>
+    </div>
+  </div>
+
+  <!-- ===== SCREEN 3: result ===== -->
+  <div id="screen-result">
+    <div class="result-scroll">
+      <div class="result-top">
+        <button class="back-btn" id="resultBack"><svg class="icon"><use href="#i-chevron-left"/></svg></button>
+        <span class="result-title">완성된 시간네컷</span>
+        <span style="width:32px"></span>
+      </div>
+      <div class="strip-wrap"><canvas id="stripCanvas"></canvas></div>
+      <div class="result-actions">
+        <a class="btn-gold" id="downloadBtn" download="서울아랫길_시간네컷.png"><svg class="icon"><use href="#i-download"/></svg>다운로드</a>
+        <button class="btn-ghost" id="retakeBtn"><svg class="icon"><use href="#i-refresh"/></svg>다시 찍기</button>
+      </div>
+      <div class="result-note"><svg class="icon"><use href="#i-info"/></svg><span>다운로드한 시간네컷은 을지로4가 제작 구역 참여점포에서 인화·포토북으로 제작할 수 있어요. (프로토타입 데모)</span></div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+var TOTAL_SHOTS = 4;
+var CELL = 640; // capture cell resolution (square)
+
+var state = { stream:null, facing:'user', shots:[], countdownBusy:false };
+
+function $(sel, root){ return (root||document).querySelector(sel); }
+function $all(sel, root){ return Array.prototype.slice.call((root||document).querySelectorAll(sel)); }
+
+$('#startBtn').addEventListener('click', function(){ openCamera(); });
+$('#uploadAltBtn').addEventListener('click', function(){ $('#fileInput').click(); });
+$('#fileInput').addEventListener('change', function(e){ handleFilesFallback(e.target.files); });
+$('#fileInput2').addEventListener('change', function(e){ handleFilesFallback(e.target.files); });
+
+/* ---------- Screen 2: camera ---------- */
+var video = $('#video');
+
+function openCamera(){
+  state.shots = [];
+  renderShotsStrip();
+  updateBadge();
+  $('#screen-pick').style.display = 'none';
+  $('#screen-cam').classList.add('show');
+  $('#camError').classList.remove('show');
+  startStream();
+}
+
+function startStream(){
+  if (state.stream){ state.stream.getTracks().forEach(function(t){ t.stop(); }); state.stream = null; }
+  if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia){
+    showCamError(); return;
+  }
+  navigator.mediaDevices.getUserMedia({ video: { facingMode: state.facing }, audio:false })
+    .then(function(stream){
+      state.stream = stream;
+      video.srcObject = stream;
+      video.style.transform = state.facing === 'user' ? 'scaleX(-1)' : 'none';
+    })
+    .catch(function(){ showCamError(); });
+}
+
+function showCamError(){ $('#camError').classList.add('show'); }
+
+$('#camSwitch').addEventListener('click', function(){
+  state.facing = state.facing === 'user' ? 'environment' : 'user';
+  startStream();
+});
+
+$('#camClose').addEventListener('click', function(){
+  stopStream();
+  $('#screen-cam').classList.remove('show');
+  $('#screen-pick').style.display = '';
+});
+
+function stopStream(){
+  if (state.stream){ state.stream.getTracks().forEach(function(t){ t.stop(); }); state.stream = null; }
+}
+
+function updateBadge(){
+  $('#shotBadge').textContent = (state.shots.length + 1) + ' / ' + TOTAL_SHOTS;
+}
+
+$('#shutterBtn').addEventListener('click', function(){
+  if (state.countdownBusy || state.shots.length >= TOTAL_SHOTS) return;
+  runCountdown(function(){ captureFromVideo(); });
+});
+
+function runCountdown(done){
+  state.countdownBusy = true;
+  $('#shutterBtn').disabled = true;
+  var n = 3;
+  var el = $('#camCount');
+  el.classList.add('show');
+  el.textContent = n;
+  var timer = setInterval(function(){
+    n -= 1;
+    if (n <= 0){
+      clearInterval(timer);
+      el.classList.remove('show');
+      state.countdownBusy = false;
+      $('#shutterBtn').disabled = false;
+      done();
+    } else {
+      el.textContent = n;
+    }
+  }, 700);
+}
+
+function flash(){
+  var f = $('#camFlash');
+  f.classList.remove('flash'); void f.offsetWidth; f.classList.add('flash');
+}
+
+function captureFromVideo(){
+  var vw = video.videoWidth, vh = video.videoHeight;
+  if (!vw || !vh) return;
+  var side = Math.min(vw, vh);
+  var sx = (vw - side) / 2, sy = (vh - side) / 2;
+  var canvas = document.createElement('canvas');
+  canvas.width = CELL; canvas.height = CELL;
+  var ctx = canvas.getContext('2d');
+  ctx.save();
+  if (state.facing === 'user'){ ctx.translate(CELL,0); ctx.scale(-1,1); }
+  ctx.drawImage(video, sx, sy, side, side, 0, 0, CELL, CELL);
+  ctx.restore();
+  flash();
+  addShot(canvas);
+}
+
+function handleFilesFallback(files){
+  if (!files || !files.length) return;
+  var list = Array.prototype.slice.call(files).slice(0, TOTAL_SHOTS - state.shots.length);
+  if (!list.length) return;
+  $('#screen-pick').style.display = 'none';
+  $('#screen-cam').classList.add('show');
+  $('#camError').classList.add('show');
+  updateBadge();
+  var i = 0;
+  function next(){
+    if (i >= list.length) return;
+    var file = list[i]; i += 1;
+    var img = new Image();
+    img.onload = function(){
+      var side = Math.min(img.width, img.height);
+      var sx = (img.width - side) / 2, sy = (img.height - side) / 2;
+      var canvas = document.createElement('canvas');
+      canvas.width = CELL; canvas.height = CELL;
+      var ctx = canvas.getContext('2d');
+      ctx.drawImage(img, sx, sy, side, side, 0, 0, CELL, CELL);
+      addShot(canvas);
+      URL.revokeObjectURL(img.src);
+      next();
+    };
+    img.src = URL.createObjectURL(file);
+  }
+  next();
+}
+
+function addShot(canvas){
+  state.shots.push(canvas);
+  renderShotsStrip();
+  if (state.shots.length >= TOTAL_SHOTS){
+    stopStream();
+    setTimeout(buildResult, 300);
+  } else {
+    updateBadge();
+  }
+}
+
+function renderShotsStrip(){
+  var wrap = $('#shotsStrip');
+  wrap.innerHTML = '';
+  state.shots.forEach(function(c){
+    var t = document.createElement('div');
+    t.className = 'thumb';
+    var img = document.createElement('img');
+    img.src = c.toDataURL('image/jpeg', 0.85);
+    t.appendChild(img);
+    wrap.appendChild(t);
+  });
+}
+
+/* ---------- Screen 3: build strip & result ---------- */
+function roundRectPath(ctx, x, y, w, h, r){
+  ctx.beginPath();
+  ctx.moveTo(x+r, y);
+  ctx.arcTo(x+w, y, x+w, y+h, r);
+  ctx.arcTo(x+w, y+h, x, y+h, r);
+  ctx.arcTo(x, y+h, x, y, r);
+  ctx.arcTo(x, y, x+w, y, r);
+  ctx.closePath();
+}
+
+function buildResult(){
+  var pad = 28, gap = 14, cellW = 480;
+  var headerH = 96, footerH = 92;
+  var w = cellW + pad * 2;
+  var h = headerH + state.shots.length * cellW + (state.shots.length - 1) * gap + footerH + pad;
+
+  var canvas = $('#stripCanvas');
+  canvas.width = w; canvas.height = h;
+  var ctx = canvas.getContext('2d');
+
+  ctx.fillStyle = '#fffcf6';
+  roundRectPath(ctx, 0, 0, w, h, 22);
+  ctx.fill();
+
+  ctx.save();
+  ctx.strokeStyle = '#c9a24b';
+  ctx.lineWidth = 3;
+  roundRectPath(ctx, 4, 4, w-8, h-8, 18);
+  ctx.stroke();
+  ctx.restore();
+
+  ctx.fillStyle = '#0c1f34';
+  ctx.font = '700 15px "Noto Serif KR", serif';
+  ctx.textAlign = 'left';
+  ctx.fillText('서울 아랫길 600년', pad, 40);
+  ctx.fillStyle = '#a97f2e';
+  ctx.font = '700 12px Pretendard, sans-serif';
+  ctx.fillText('SEOUL ARATGIL TIME-CUT', pad, 60);
+  ctx.strokeStyle = '#e9e0cf';
+  ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(pad, headerH - 14); ctx.lineTo(w - pad, headerH - 14); ctx.stroke();
+
+  var y = headerH;
+  state.shots.forEach(function(shot){
+    ctx.save();
+    roundRectPath(ctx, pad, y, cellW, cellW, 10);
+    ctx.clip();
+    ctx.drawImage(shot, pad, y, cellW, cellW);
+    ctx.restore();
+    ctx.strokeStyle = '#c9a24b';
+    ctx.lineWidth = 2.5;
+    roundRectPath(ctx, pad, y, cellW, cellW, 10);
+    ctx.stroke();
+    y += cellW + gap;
+  });
+
+  var footY = h - footerH;
+  ctx.strokeStyle = '#e9e0cf';
+  ctx.beginPath(); ctx.moveTo(pad, footY + 10); ctx.lineTo(w - pad, footY + 10); ctx.stroke();
+  ctx.fillStyle = '#6b7686';
+  ctx.font = '600 11.5px Pretendard, sans-serif';
+  var d = new Date();
+  var dateStr = d.getFullYear() + '.' + String(d.getMonth()+1).padStart(2,'0') + '.' + String(d.getDate()).padStart(2,'0');
+  ctx.fillText('을지로 지하상가 · ' + dateStr, pad, footY + 34);
+  ctx.fillStyle = '#1b2130';
+  ctx.font = '700 12px Pretendard, sans-serif';
+  ctx.fillText('오늘의 서울을 네 장의 시간으로', pad, footY + 54);
+
+  ctx.save();
+  ctx.translate(w - pad - 30, footY + 40);
+  ctx.strokeStyle = '#c9a24b';
+  ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.arc(0, 0, 22, 0, Math.PI*2); ctx.stroke();
+  ctx.fillStyle = '#a97f2e';
+  ctx.font = '700 13px "Noto Serif KR", serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('600', 0, 5);
+  ctx.restore();
+
+  $('#downloadBtn').href = canvas.toDataURL('image/png');
+
+  $('#screen-cam').classList.remove('show');
+  $('#screen-result').classList.add('show');
+}
+
+$('#resultBack').addEventListener('click', resetAll);
+$('#retakeBtn').addEventListener('click', resetAll);
+
+function resetAll(){
+  stopStream();
+  state.shots = [];
+  $('#screen-result').classList.remove('show');
+  $('#screen-pick').style.display = '';
+}
+})();
+</script>
+</body>
+</html>
