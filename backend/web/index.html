@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0c1f34" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<title>지하상가 경로 추천 | 서울 아랫길 600년</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700&family=Pretendard:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============ Design tokens ============ */
+:root{
+  --navy-950:#081527;
+  --navy-900:#0c1f34;
+  --navy-800:#123049;
+  --navy-700:#1a4162;
+  --navy-600:#26567f;
+  --gold-300:#eed9ab;
+  --gold-400:#ddbd77;
+  --gold-500:#c9a24b;
+  --gold-600:#a97f2e;
+  --cream-50:#fbf7ef;
+  --cream-100:#f4ecdc;
+  --paper:#fffcf6;
+  --ink-900:#1b2130;
+  --ink-700:#3b4453;
+  --ink-500:#6b7686;
+  --ink-300:#a7b0bd;
+  --line:#e9e0cf;
+  --line-soft:#efe8d9;
+  --zone-e1:#c9922f;
+  --zone-e3:#b6553a;
+  --zone-e4:#2f6f68;
+  --zone-ddp:#4a4f95;
+  --shadow-card:0 10px 30px -14px rgba(11,25,45,.28);
+  --shadow-pop:0 18px 46px -18px rgba(11,25,45,.4);
+  --radius-lg:22px;
+  --radius-md:16px;
+  --radius-sm:11px;
+  --sans:'Pretendard','Noto Sans KR',-apple-system,BlinkMacSystemFont,'Malgun Gothic',sans-serif;
+  --serif:'Noto Serif KR','Nanum Myeongjo',serif;
+  --safe-t:env(safe-area-inset-top,0px);
+  --safe-b:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{
+  margin:0;
+  background:#e7e2d6;
+  color:var(--ink-900);
+  font-family:var(--sans);
+  -webkit-font-smoothing:antialiased;
+}
+button,input,textarea,select{font-family:inherit}
+.icon{width:1em;height:1em;display:inline-block;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;vertical-align:-0.15em}
+.icon.filled{fill:currentColor;stroke:none}
+
+/* ============ App shell ============ */
+.app{
+  position:relative;
+  width:min(100%,430px);
+  min-height:100vh;
+  min-height:100dvh;
+  margin:0 auto;
+  background:var(--paper);
+  overflow:hidden;
+  box-shadow:none;
+}
+@media (min-width:560px){
+  body{display:flex;justify-content:center;padding:28px 0}
+  .app{min-height:min(100dvh,900px);height:min(100dvh,900px);border-radius:34px;box-shadow:0 30px 70px -22px rgba(8,20,38,.45),0 0 0 10px #0c1f3410;}
+}
+
+.scroll{
+  height:100%;
+  overflow-y:auto;
+  overscroll-behavior-y:contain;
+  padding-bottom:calc(96px + var(--safe-b));
+  scrollbar-width:none;
+}
+.scroll::-webkit-scrollbar{display:none}
+
+/* ============ Top bar ============ */
+.topbar{
+  position:sticky;top:0;z-index:20;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:calc(16px + var(--safe-t)) 20px 14px;
+  background:linear-gradient(180deg,var(--paper) 70%,rgba(255,252,246,0));
+}
+.brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:14px;letter-spacing:.2px;color:var(--navy-900)}
+.brand .mark{
+  width:26px;height:26px;border-radius:8px;
+  background:linear-gradient(155deg,var(--navy-800),var(--navy-950));
+  display:grid;place-items:center;color:var(--gold-400);font-size:13px;flex:none;
+  box-shadow:inset 0 0 0 1px #ffffff14;
+}
+.brand small{display:block;font-weight:600;color:var(--ink-500);font-size:10px;letter-spacing:.3px;margin-top:1px}
+.module-chip{
+  font-size:10.5px;font-weight:700;color:var(--gold-600);
+  background:var(--cream-100);border:1px solid var(--line);
+  padding:5px 10px;border-radius:99px;letter-spacing:.2px;
+}
+
+/* ============ Hero ============ */
+.hero{padding:6px 20px 4px}
+.hero h1{
+  font-family:var(--serif);
+  font-weight:700;
+  font-size:26px;
+  line-height:1.32;
+  letter-spacing:-.3px;
+  margin:6px 0 8px;
+  color:var(--navy-950);
+}
+.hero p{margin:0 0 4px;color:var(--ink-500);font-size:12.5px;line-height:1.6}
+
+/* ============ Location card ============ */
+.card-location{
+  margin:16px 20px 0;
+  display:flex;align-items:center;gap:10px;
+  padding:12px 12px 12px 14px;
+  border:1px solid var(--line);border-radius:var(--radius-md);
+  background:var(--cream-50);
+}
+.card-location .pin{
+  width:34px;height:34px;border-radius:10px;flex:none;
+  background:var(--navy-900);color:var(--gold-400);
+  display:grid;place-items:center;font-size:16px;
+}
+.card-location .info{flex:1;min-width:0}
+.card-location .info b{display:block;font-size:13px;font-weight:800;color:var(--navy-950)}
+.card-location .info span{display:block;font-size:10.5px;color:var(--ink-500);margin-top:1px}
+.gate-select{
+  appearance:none;-webkit-appearance:none;
+  border:1px solid var(--line);background:var(--paper);
+  color:var(--navy-800);font-weight:700;font-size:11px;
+  padding:7px 26px 7px 10px;border-radius:9px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23123049' stroke-width='2.4'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 8px center;
+}
+
+/* ============ Sections ============ */
+.section{margin:22px 20px 0}
+.section-label{
+  display:flex;align-items:baseline;justify-content:space-between;
+  font-size:12.5px;font-weight:800;color:var(--navy-950);margin-bottom:10px;
+}
+.section-label .icon{color:var(--gold-600);margin-right:6px}
+.section-label .hint{font-size:10.5px;font-weight:600;color:var(--ink-300)}
+
+.grid{display:grid;gap:8px}
+.grid.g4{grid-template-columns:repeat(4,1fr)}
+.grid.g3{grid-template-columns:repeat(3,1fr)}
+.grid.g2{grid-template-columns:repeat(2,1fr)}
+
+.opt{
+  position:relative;
+  border:1px solid var(--line);background:var(--paper);
+  border-radius:13px;color:var(--ink-700);
+  font-weight:700;cursor:pointer;
+  transition:border-color .15s ease, background .15s ease, color .15s ease, box-shadow .15s ease, transform .1s ease;
+}
+.opt:active{transform:scale(.97)}
+.opt.time{min-height:48px;font-size:14px}
+.opt.purpose{
+  min-height:72px;padding:10px 6px 9px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
+  font-size:11.5px;line-height:1.25;text-align:center;
+}
+.opt.purpose .icon{font-size:19px;color:var(--navy-700)}
+.opt.dest{min-height:42px;font-size:11.5px;padding:0 6px}
+
+.opt.active{
+  background:var(--navy-900);border-color:var(--navy-900);color:#fff;
+  box-shadow:0 8px 20px -8px rgba(12,31,52,.55);
+}
+.opt.active .icon{color:var(--gold-400)}
+.opt.active::after{
+  content:"";position:absolute;top:-5px;right:-5px;width:16px;height:16px;border-radius:50%;
+  background:var(--gold-500);box-shadow:0 0 0 3px var(--paper);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='9' viewBox='0 0 24 24' fill='none' stroke='%230c1f34' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:center;
+}
+
+/* ============ CTA ============ */
+.cta-wrap{
+  position:absolute;left:0;right:0;bottom:0;z-index:30;
+  padding:14px 20px calc(16px + var(--safe-b));
+  background:linear-gradient(180deg,rgba(255,252,246,0),var(--paper) 32%);
+}
+.cta{
+  width:100%;border:0;border-radius:15px;padding:16px;
+  background:linear-gradient(135deg,var(--navy-800),var(--navy-950));
+  color:#fdf6e6;font-size:15px;font-weight:800;letter-spacing:.2px;
+  cursor:pointer;box-shadow:0 16px 30px -12px rgba(8,20,38,.55);
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  transition:transform .12s ease, opacity .12s ease;
+}
+.cta:active{transform:scale(.985)}
+.cta:disabled{opacity:.72;cursor:wait}
+.cta .icon{color:var(--gold-400)}
+.spin{
+  width:15px;height:15px;border-radius:50%;
+  border:2px solid #ffffff40;border-top-color:#fdf6e6;
+  animation:spin .7s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.err-banner{
+  margin:14px 20px 0;padding:11px 13px;border-radius:11px;
+  background:#fbeceb;border:1px solid #f0c9c5;color:#9a3b32;
+  font-size:12px;font-weight:600;line-height:1.5;
+  display:flex;gap:8px;align-items:flex-start;
+}
+.err-banner .icon{flex:none;margin-top:1px}
+
+/* ============ Result screen ============ */
+#screen-result{display:none}
+#screen-result.show{display:block}
+#screen-select.hide{display:none}
+
+.result-top{
+  display:flex;align-items:center;gap:10px;
+  padding:calc(16px + var(--safe-t)) 20px 8px;
+}
+.back-btn{
+  width:32px;height:32px;border-radius:10px;border:1px solid var(--line);
+  background:var(--paper);color:var(--navy-900);display:grid;place-items:center;
+  cursor:pointer;flex:none;
+}
+.result-top .title{font-size:13.5px;font-weight:800;color:var(--navy-950)}
+.result-top .title small{display:block;font-weight:600;color:var(--ink-500);font-size:10.5px;margin-top:1px}
+
+.ticket{
+  margin:10px 20px 0;border-radius:20px;overflow:hidden;
+  background:linear-gradient(150deg,var(--navy-800) 0%,var(--navy-950) 78%);
+  box-shadow:var(--shadow-pop);position:relative;color:#fff;
+}
+.ticket .ticket-glow{position:absolute;inset:0;opacity:.5;pointer-events:none;
+  background:
+    radial-gradient(120px 120px at 100% 0%, #d8b56733 0%, transparent 60%),
+    radial-gradient(160px 160px at 0% 100%, #ffffff12 0%, transparent 60%);
+}
+.ticket-main{position:relative;padding:20px 20px 16px}
+.ticket-eyebrow{
+  display:flex;align-items:center;gap:6px;font-size:10.5px;font-weight:700;
+  color:var(--gold-300);letter-spacing:.3px;text-transform:uppercase;
+}
+.ticket-time{font-family:var(--serif);font-size:32px;font-weight:700;margin:8px 0 2px;letter-spacing:-.5px}
+.ticket-time span{font-size:15px;font-weight:600;margin-left:3px;color:#e8dfc7}
+.ticket-sub{font-size:11.5px;color:#c9d3e0;line-height:1.55;margin:0}
+.ticket-stats{display:flex;gap:10px;margin-top:16px}
+.tstat{
+  flex:1;background:#ffffff14;border:1px solid #ffffff1f;border-radius:12px;
+  padding:9px 10px;
+}
+.tstat b{display:block;font-size:16px;font-weight:800}
+.tstat span{display:block;font-size:9.5px;color:#c9d3e0;margin-top:2px;font-weight:600}
+.perforation{
+  position:relative;height:0;border-top:1.5px dashed #ffffff3a;margin:0 18px;
+}
+.perforation::before,.perforation::after{
+  content:"";position:absolute;top:-9px;width:18px;height:18px;border-radius:50%;background:var(--paper);
+}
+@media (min-width:560px){.perforation::before,.perforation::after{background:#e7e2d6}}
+.perforation::before{left:-27px}
+.perforation::after{right:-27px}
+.ticket-foot{position:relative;padding:14px 20px 18px;display:flex;align-items:center;justify-content:space-between}
+.ticket-foot .mix{font-size:10.5px;color:#c9d3e0;font-weight:600}
+.ticket-foot .mix b{color:#fff}
+.ticket-foot .dist{display:flex;align-items:center;gap:5px;font-size:10.5px;color:var(--gold-300);font-weight:700}
+
+.notice-banner{
+  margin:14px 20px 0;padding:11px 13px;border-radius:11px;
+  background:#fdf3e2;border:1px solid #f0dcae;color:#7a5518;
+  font-size:11.5px;line-height:1.55;font-weight:600;
+  display:flex;gap:8px;
+}
+.notice-banner .icon{flex:none;margin-top:1px;color:#b8860b}
+.remaining-banner{
+  margin:14px 20px 0;padding:11px 13px;border-radius:11px;
+  background:#eef4f2;border:1px solid #d3e6e0;color:#25594f;
+  font-size:11.5px;line-height:1.55;font-weight:600;display:flex;gap:8px;
+}
+.remaining-banner .icon{flex:none;margin-top:1px;color:#2f6f68}
+
+.timeline{margin:18px 20px 6px;list-style:none;padding:0}
+.tl-item{position:relative;padding:0 0 22px 30px;border-left:2px solid var(--line-soft)}
+.tl-item:last-child{border-left-color:transparent;padding-bottom:2px}
+.tl-item .node{
+  position:absolute;left:-11px;top:-1px;width:20px;height:20px;border-radius:50%;
+  background:var(--paper);border:2px solid var(--zone-e1);
+  display:grid;place-items:center;color:var(--zone-e1);
+}
+.tl-item .node .icon{width:.62em;height:.62em}
+.tl-item[data-zone="E3"] .node{border-color:var(--zone-e3);color:var(--zone-e3)}
+.tl-item[data-zone="E4"] .node{border-color:var(--zone-e4);color:var(--zone-e4)}
+.tl-item[data-zone="DDP"] .node{border-color:var(--zone-ddp);color:var(--zone-ddp)}
+.tl-arrival{
+  display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:800;color:var(--gold-600);
+  background:var(--cream-100);padding:2px 8px;border-radius:99px;margin-bottom:6px;
+}
+.tl-card{
+  border:1px solid var(--line);border-radius:14px;background:var(--paper);
+  padding:12px 13px;box-shadow:var(--shadow-card);
+}
+.tl-card .row{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.tl-card h3{margin:0;font-size:14px;font-weight:800;color:var(--navy-950);line-height:1.35}
+.status-pill{
+  flex:none;font-size:9.5px;font-weight:800;padding:3px 8px;border-radius:99px;white-space:nowrap;
+}
+.status-pill.partner_store{background:#e9eef5;color:var(--navy-700)}
+.status-pill.planned_space{background:#f6ecd6;color:var(--gold-600)}
+.status-pill.existing_facility{background:#e4f0ee;color:var(--zone-e4)}
+.tl-card p{margin:6px 0 0;font-size:12px;color:var(--ink-500);line-height:1.5}
+.tl-meta{display:flex;gap:12px;margin-top:9px}
+.tl-meta span{display:flex;align-items:center;gap:4px;font-size:10px;color:var(--ink-300);font-weight:700}
+
+.result-cta-row{margin:18px 20px calc(20px + var(--safe-b));display:flex;gap:8px}
+.result-cta-row button{
+  flex:1;border-radius:14px;padding:13px;font-weight:800;font-size:12.5px;
+  display:flex;align-items:center;justify-content:center;gap:6px;cursor:pointer;
+}
+.btn-ghost{border:1px solid var(--line);background:var(--paper);color:var(--navy-800)}
+.btn-solid{border:0;background:var(--navy-900);color:#fdf6e6}
+
+/* ============ Skeleton (loading result) ============ */
+.skeleton{margin:10px 20px 0}
+.sk-block{background:linear-gradient(100deg,#eee6d3 30%,#f6efe0 45%,#eee6d3 60%);background-size:200% 100%;animation:shimmer 1.3s ease-in-out infinite;border-radius:16px}
+@keyframes shimmer{0%{background-position:180% 0}100%{background-position:-20% 0}}
+
+@media (max-width:374px){
+  .grid.g3{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- Hidden icon symbol sprite -->
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M14.8 9.2l-1.6 4.4-4.4 1.6 1.6-4.4z"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></symbol>
+      <symbol id="i-scan" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.4"/><path d="M4 8V6a2 2 0 0 1 2-2h2M20 8V6a2 2 0 0 0-2-2h-2M4 16v2a2 2 0 0 0 2 2h2M20 16v2a2 2 0 0 1-2 2h-2"/></symbol>
+      <symbol id="i-photo" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="2.2"/><circle cx="9" cy="10" r="1.7"/><path d="M20 15.5l-4.5-4.3a1.6 1.6 0 0 0-2.2.05L7 17"/></symbol>
+      <symbol id="i-family" viewBox="0 0 24 24"><circle cx="8.3" cy="7.5" r="2.6"/><circle cx="16.3" cy="8.7" r="2.1"/><path d="M3.5 19.5c.4-3.3 2.3-5 4.8-5s4.4 1.7 4.8 5M13.6 19.5c.3-2.6 1.7-4 3.9-4s3.6 1.4 3.9 4"/></symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.6 5.4L19 10l-5.4 1.6L12 17l-1.6-5.4L5 10l5.4-1.6z"/><path d="M19 15l.7 2.3L22 18l-2.3.7L19 21l-.7-2.3L16 18l2.3-.7z"/></symbol>
+      <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 1-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 1 5.4-5.4l-2.6 2.6-2-2z"/></symbol>
+      <symbol id="i-cup" viewBox="0 0 24 24"><path d="M5 9h11v6a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4z"/><path d="M16 10.5h1.5a2.5 2.5 0 0 1 0 5H16"/><path d="M8 4.5c-.6.8-.6 1.4 0 2.2M12 4.5c-.6.8-.6 1.4 0 2.2"/></symbol>
+      <symbol id="i-building" viewBox="0 0 24 24"><path d="M4 21V9.5L12 4l8 5.5V21"/><path d="M9 21v-6h6v6M4 21h16"/></symbol>
+      <symbol id="i-tag" viewBox="0 0 24 24"><path d="M12.6 3.4H6A2.6 2.6 0 0 0 3.4 6v6.6a2 2 0 0 0 .6 1.4l8 8a2 2 0 0 0 2.8 0l6.4-6.4a2 2 0 0 0 0-2.8l-8-8a2 2 0 0 0-1.6-.6z"/><circle cx="8.2" cy="8.2" r="1.3"/></symbol>
+      <symbol id="i-market" viewBox="0 0 24 24"><path d="M4 9l1.5-4.5h13L20 9"/><path d="M4.5 9h15v9a1.5 1.5 0 0 1-1.5 1.5H6A1.5 1.5 0 0 1 4.5 18z"/><path d="M9.5 20.5V15h5v5.5"/></symbol>
+      <symbol id="i-any" viewBox="0 0 24 24"><path d="M7 12c0-2.5 1.8-4 3.6-4 2.6 0 3.4 4 5.8 4s3.6-1.5 3.6-4M7 12c0 2.5 1.8 4 3.6 4 2.6 0 3.4-4 5.8-4s3.6 1.5 3.6 4"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.3 7-11.4A7 7 0 0 0 5 9.6C5 14.7 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></symbol>
+      <symbol id="i-shop" viewBox="0 0 24 24"><path d="M4 10l1-5h14l1 5"/><path d="M4.5 10h15v8.5A1.5 1.5 0 0 1 18 20H6a1.5 1.5 0 0 1-1.5-1.5z"/><path d="M9 20v-4.5h6V20"/></symbol>
+      <symbol id="i-museum" viewBox="0 0 24 24"><path d="M3.5 9.5L12 4l8.5 5.5"/><path d="M5 10v9M9 10v9M15 10v9M19 10v9M3 21h18"/></symbol>
+      <symbol id="i-ai" viewBox="0 0 24 24"><path d="M12 4l1.4 4.6L18 10l-4.6 1.4L12 16l-1.4-4.6L6 10l4.6-1.4z"/><path d="M18.5 15.5l.6 2 2 .6-2 .6-.6 2-.6-2-2-.6 2-.6z"/></symbol>
+      <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+      <symbol id="i-footprints" viewBox="0 0 24 24"><path d="M8 3.5c1.6 0 2.4 1.3 2.4 3s-.7 3.4-.7 4.8c0 1.2.7 1.7.7 2.7 0 1.4-1 2-2.2 2-1.6 0-2.6-1.1-2.6-3.1 0-2 .9-2.6.9-4.8 0-1.7-.3-4.6 1.5-4.6z"/><path d="M16.2 9c1.6 0 2.4 1.3 2.4 3s-.7 3.4-.7 4.8c0 1.2.7 1.7.7 2.7 0 1.4-1 2-2.2 2-1.6 0-2.6-1.1-2.6-3.1 0-2 .9-2.6.9-4.8 0-1.7-.3-4.6 1.5-4.6z"/></symbol>
+      <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6v.1"/></symbol>
+      <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 13.7-5.7L20 8M20 12a8 8 0 0 1-13.7 5.7L4 16"/><path d="M20 4v4h-4M4 20v-4h4"/></symbol>
+      <symbol id="i-ticket" viewBox="0 0 24 24"><path d="M3 9.5V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2.5a2 2 0 0 0 0 5V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2.5a2 2 0 0 0 0-5z"/><path d="M9 5v14" stroke-dasharray="2.4 2.4"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- ============ SELECT SCREEN ============ -->
+  <div id="screen-select" class="scroll">
+    <header class="topbar">
+      <div class="brand">
+        <span class="mark">♧</span>
+        <span>서울 아랫길 <small>SEOUL ARATGIL · 600</small></span>
+      </div>
+      <span class="module-chip">지하상가 경로 추천</span>
+    </header>
+
+    <div class="hero">
+      <h1>지금, 몇 분이<br/>비어 있나요?</h1>
+      <p>시간과 목적을 고르면 지금 위치에서 이용 가능한 코스만 다시 계산해요.</p>
+    </div>
+
+    <div class="card-location">
+      <span class="pin"><svg class="icon"><use href="#i-compass"/></svg></span>
+      <div class="info">
+        <b id="gateLabel">위치 확인 중</b>
+        <span id="gateSub">QR 게이트</span>
+      </div>
+      <select class="gate-select" id="gateSelect" aria-label="현재 위치 변경">
+        <option value="E1-01">을지로입구</option>
+        <option value="E3-01">을지로3가 서측</option>
+        <option value="E3-02">을지로3가 동측</option>
+        <option value="E4-01">을지로4가 서측</option>
+        <option value="E4-02">을지로4가 동측</option>
+        <option value="DDP-01">DDP 연결부</option>
+      </select>
+    </div>
+
+    <section class="section">
+      <div class="section-label"><span><svg class="icon"><use href="#i-clock"/></svg>남은 시간</span></div>
+      <div class="grid g4" id="minutes">
+        <button class="opt time active" data-value="10">10분</button>
+        <button class="opt time" data-value="30">30분</button>
+        <button class="opt time" data-value="60">60분</button>
+        <button class="opt time" data-value="90">90분</button>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-label"><span><svg class="icon"><use href="#i-spark"/></svg>방문 목적</span><span class="hint">하나만 선택</span></div>
+      <div class="grid g3" id="purpose">
+        <button class="opt purpose active" data-value="look"><svg class="icon"><use href="#i-scan"/></svg>빠르게 둘러보기</button>
+        <button class="opt purpose" data-value="history"><svg class="icon"><use href="#i-photo"/></svg>사진·기억 보기</button>
+        <button class="opt purpose" data-value="family"><svg class="icon"><use href="#i-family"/></svg>아이와 함께</button>
+        <button class="opt purpose" data-value="make"><svg class="icon"><use href="#i-spark"/></svg>기념품 만들기</button>
+        <button class="opt purpose" data-value="service"><svg class="icon"><use href="#i-tool"/></svg>인쇄·수선 찾기</button>
+        <button class="opt purpose" data-value="rest"><svg class="icon"><use href="#i-cup"/></svg>쉬어가기</button>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-label"><span><svg class="icon"><use href="#i-pin"/></svg>다음 목적지</span><span class="hint">선택 사항</span></div>
+      <div class="grid g2" id="destination">
+        <button class="opt dest active" data-value=""><svg class="icon"><use href="#i-any"/></svg> 상관없어요</button>
+        <button class="opt dest" data-value="ddp"><svg class="icon"><use href="#i-building"/></svg> DDP로 이동</button>
+        <button class="opt dest" data-value="hipjiro"><svg class="icon"><use href="#i-tag"/></svg> 힙지로로 이동</button>
+        <button class="opt dest" data-value="bangsan"><svg class="icon"><use href="#i-market"/></svg> 방산시장으로 이동</button>
+      </div>
+    </section>
+
+    <div id="errorSlot"></div>
+  </div>
+
+  <!-- ============ RESULT SCREEN ============ -->
+  <div id="screen-result" class="scroll">
+    <div class="result-top">
+      <button class="back-btn" id="backBtn" aria-label="뒤로"><svg class="icon"><use href="#i-chevron-left"/></svg></button>
+      <div class="title">추천 코스<small id="resultGateLine">출발 위치 확인 중</small></div>
+    </div>
+    <div id="resultBody"></div>
+  </div>
+
+  <div class="cta-wrap" id="ctaWrap">
+    <button class="cta" id="recommendBtn">
+      <svg class="icon"><use href="#i-ticket"/></svg>
+      <span id="ctaLabel">AI 코스 추천받기</span>
+    </button>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var params = new URLSearchParams(location.search);
+  var state = {
+    gate: params.get('gate') || 'E3-01',
+    minutes: 10,
+    purpose: 'look',
+    destination: ''
+  };
+
+  var gateLabels = {
+    'E1-01':'을지로입구 서쪽', 'E3-01':'을지로3가 서측', 'E3-02':'을지로3가 동측',
+    'E4-01':'을지로4가 서측', 'E4-02':'을지로4가 동측', 'DDP-01':'DDP 연결부'
+  };
+  var purposeLabels = {
+    look:'빠르게 둘러보기', history:'사진·기억 보기', family:'아이와 함께',
+    make:'기념품 만들기', service:'인쇄·수선 찾기', rest:'쉬어가기'
+  };
+  var destLabels = { ddp:'DDP로', hipjiro:'힙지로로', bangsan:'방산시장으로' };
+  var kindIcon = { shop:'i-shop', place:'i-museum', ai:'i-ai' };
+
+  function $(sel, root){ return (root||document).querySelector(sel); }
+  function $all(sel, root){ return Array.prototype.slice.call((root||document).querySelectorAll(sel)); }
+
+  function updateGateCard(){
+    $('#gateLabel').textContent = gateLabels[state.gate] || state.gate;
+    $('#gateSub').textContent = 'QR 게이트 · ' + state.gate;
+    $('#gateSelect').value = state.gate;
+    var url = new URL(location.href);
+    url.searchParams.set('gate', state.gate);
+    history.replaceState({}, '', url);
+  }
+  updateGateCard();
+
+  $('#gateSelect').addEventListener('change', function(e){
+    state.gate = e.target.value;
+    updateGateCard();
+  });
+
+  function wireGroup(containerId, key, isNumber){
+    $all('#' + containerId + ' .opt').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        $all('#' + containerId + ' .opt').forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        state[key] = isNumber ? Number(btn.dataset.value) : btn.dataset.value;
+      });
+    });
+  }
+  wireGroup('minutes', 'minutes', true);
+  wireGroup('purpose', 'purpose', false);
+  wireGroup('destination', 'destination', false);
+
+  function buildFreeText(){
+    var dest = state.destination ? (destLabels[state.destination] + ' 가고 싶어요.') : '';
+    return state.minutes + '분 동안 ' + purposeLabels[state.purpose] + ' 코스를 추천해줘. ' + dest;
+  }
+
+  function showError(message){
+    $('#errorSlot').innerHTML =
+      '<div class="err-banner"><svg class="icon"><use href="#i-info"/></svg><span>' + message + '</span></div>';
+  }
+  function clearError(){ $('#errorSlot').innerHTML = ''; }
+
+  function zoneIconFor(kind){ return kindIcon[kind] || 'i-museum'; }
+
+  function renderResult(data){
+    var r = data.route, mix = r.mix || {};
+    var gateLabel = data.gate.label || gateLabels[data.gate.token] || data.gate.token;
+    $('#resultGateLine').textContent = gateLabel + '에서 출발';
+
+    var destNotice = r.destination_notice
+      ? '<div class="notice-banner"><svg class="icon"><use href="#i-info"/></svg><span>' + r.destination_notice + '</span></div>'
+      : '';
+
+    var remaining = r.remaining_minutes || 0;
+    var remainingBanner = remaining
+      ? '<div class="remaining-banner"><svg class="icon"><use href="#i-cup"/></svg><span>남는 ' + remaining + '분은 주변 전시·카페·점포를 자유롭게 더 즐길 수 있어요.</span></div>'
+      : '';
+
+    var items = (r.stops || []).map(function(s){
+      return '' +
+        '<li class="tl-item" data-zone="' + (s.zone || '') + '">' +
+          '<span class="node"><svg class="icon"><use href="#' + zoneIconFor(s.kind) + '"/></svg></span>' +
+          '<span class="tl-arrival"><svg class="icon"><use href="#i-clock"/></svg>' + s.arrival_minute + '분 도착</span>' +
+          '<div class="tl-card">' +
+            '<div class="row"><h3>' + s.title + '</h3>' +
+            (s.status_label ? '<span class="status-pill ' + (s.status || '') + '">' + s.status_label + '</span>' : '') +
+            '</div>' +
+            '<p>' + (s.detail || '') + '</p>' +
+            '<div class="tl-meta">' +
+              '<span><svg class="icon"><use href="#i-footprints"/></svg>도보 ' + (s.walk_minutes_from_previous || 0) + '분</span>' +
+              '<span><svg class="icon"><use href="#i-clock"/></svg>체류 ' + (s.dwell_minutes || 0) + '분</span>' +
+            '</div>' +
+          '</div>' +
+        '</li>';
+    }).join('');
+
+    $('#resultBody').innerHTML =
+      '<div class="ticket">' +
+        '<div class="ticket-glow"></div>' +
+        '<div class="ticket-main">' +
+          '<div class="ticket-eyebrow"><svg class="icon"><use href="#i-ticket"/></svg>' + gateLabel + ' 출발 · 서울 아랫길 600년</div>' +
+          '<div class="ticket-time">' + r.total_minutes + '<span>분 코스</span></div>' +
+          '<p class="ticket-sub">도보·체험·완충시간을 합쳐 정확히 ' + r.total_minutes + '분 일정이에요.</p>' +
+          '<div class="ticket-stats">' +
+            '<div class="tstat"><b>' + r.active_minutes + '분</b><span>실제 체험 시간</span></div>' +
+            '<div class="tstat"><b>' + (r.walking_distance_m || 0) + 'm</b><span>총 도보 거리</span></div>' +
+            '<div class="tstat"><b>' + (r.stops ? r.stops.length : 0) + '곳</b><span>경유 지점</span></div>' +
+          '</div>' +
+        '</div>' +
+        '<div class="perforation"></div>' +
+        '<div class="ticket-foot">' +
+          '<span class="mix">신규 조성 <b>' + (mix.planned_spaces || 0) + '</b>곳 · 기존 참여점포 <b>' + (mix.existing_partner_stores || 0) + '</b>곳</span>' +
+        '</div>' +
+      '</div>' +
+      destNotice + remainingBanner +
+      '<ol class="timeline">' + items + '</ol>' +
+      '<div class="result-cta-row">' +
+        '<button class="btn-ghost" id="retryBtn"><svg class="icon"><use href="#i-refresh"/></svg>조건 다시 선택</button>' +
+      '</div>';
+
+    $('#retryBtn').addEventListener('click', goToSelect);
+    $('#screen-select').classList.add('hide');
+    $('#screen-result').classList.add('show');
+    $('#ctaWrap').style.display = 'none';
+    $('#screen-result').scrollTop = 0;
+  }
+
+  function renderSkeleton(){
+    $('#resultBody').innerHTML =
+      '<div class="skeleton">' +
+        '<div class="sk-block" style="height:190px"></div>' +
+        '<div class="sk-block" style="height:70px;margin-top:14px"></div>' +
+        '<div class="sk-block" style="height:70px;margin-top:14px"></div>' +
+      '</div>';
+    $('#resultGateLine').textContent = '코스를 계산하고 있어요…';
+    $('#screen-select').classList.add('hide');
+    $('#screen-result').classList.add('show');
+    $('#ctaWrap').style.display = 'none';
+  }
+
+  function goToSelect(){
+    $('#screen-result').classList.remove('show');
+    $('#screen-select').classList.remove('hide');
+    $('#ctaWrap').style.display = '';
+  }
+
+  $('#backBtn').addEventListener('click', goToSelect);
+
+  $('#recommendBtn').addEventListener('click', function(){
+    var btn = this;
+    clearError();
+    btn.disabled = true;
+    $('#ctaLabel').textContent = '코스를 계산하고 있어요…';
+    btn.insertAdjacentHTML('afterbegin', '<span class="spin" id="ctaSpin"></span>');
+    renderSkeleton();
+
+    fetch('/api/ai/routes/recommend', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        gate_token: state.gate,
+        text: buildFreeText(),
+        minutes: state.minutes,
+        purpose: state.purpose,
+        destination: state.destination || null
+      })
+    })
+    .then(function(res){ return res.json().then(function(data){ return { ok: res.ok, data: data }; }); })
+    .then(function(out){
+      if (!out.ok) throw new Error(out.data.error || out.data.message || '코스 추천에 실패했습니다.');
+      renderResult(out.data);
+    })
+    .catch(function(e){
+      goToSelect();
+      showError(e.message || '코스 추천 중 오류가 발생했습니다.');
+    })
+    .finally(function(){
+      btn.disabled = false;
+      $('#ctaLabel').textContent = 'AI 코스 추천받기';
+      var s = document.getElementById('ctaSpin');
+      if (s) s.remove();
+    });
+  });
+})();
+</script>
+</body>
+</html>
