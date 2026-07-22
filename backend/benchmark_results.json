@@ -1,0 +1,47 @@
+{
+  "now": "2026-07-21T15:00:00+09:00",
+  "full_matrix": {
+    "greedy": {
+      "label": "그리디 최근접 (baseline)",
+      "n": 120,
+      "success_rate": 94.2,
+      "avg_utilization_pct": 76.7,
+      "avg_stops": 3.23,
+      "avg_distance_m": 947.8,
+      "avg_distance_per_stop_m": 279.0,
+      "mix_quality_rate_pct": 36.3
+    },
+    "current": {
+      "label": "현재 엔진 (Dijkstra + 조합탐색)",
+      "n": 120,
+      "success_rate": 94.2,
+      "avg_utilization_pct": 92.4,
+      "avg_stops": 3.25,
+      "avg_distance_m": 1614.0,
+      "avg_distance_per_stop_m": 437.3,
+      "mix_quality_rate_pct": 44.2
+    }
+  },
+  "destination_matrix": {
+    "greedy": {
+      "label": "그리디 최근접 + 목적지 지정",
+      "n": 18,
+      "success_rate": 100.0,
+      "avg_utilization_pct": 91.3,
+      "avg_stops": 4.67,
+      "avg_distance_m": 1519.4,
+      "avg_distance_per_stop_m": 337.3,
+      "mix_quality_rate_pct": 77.8
+    },
+    "current": {
+      "label": "현재 엔진 + 목적지 지정",
+      "n": 18,
+      "success_rate": 100.0,
+      "avg_utilization_pct": 96.0,
+      "avg_stops": 4.78,
+      "avg_distance_m": 1603.9,
+      "avg_distance_per_stop_m": 343.8,
+      "mix_quality_rate_pct": 100.0
+    }
+  }
+}
