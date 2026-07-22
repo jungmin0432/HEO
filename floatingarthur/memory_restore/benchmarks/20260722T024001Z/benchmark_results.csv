@@ -1,0 +1,2 @@
+created_at,place_id,input_width,input_height,input_megapixels,recommended_plan,candidate,test_type,psnr_db,ssim,edge_strength,processing_time_ms
+2026-07-22T02:40:01.870116+00:00,euljiro-line2-opening-1983-corridor,1055,1051,1.109,medium-resolution-x2,Pillow baseline,controlled degradation,25.45,0.80982,3.134,21.75

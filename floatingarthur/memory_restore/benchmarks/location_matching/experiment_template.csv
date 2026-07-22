@@ -1,0 +1,1 @@
+run_id,query_id,query_source,ground_truth_level,asset_id,candidate_rank,clip_score_raw,dino_score_raw,geo_score,landmark_score,local_feature_score,retrieval_score,decision,model_version,index_manifest_sha256,gps_accuracy_m,latency_ms,reviewer,notes

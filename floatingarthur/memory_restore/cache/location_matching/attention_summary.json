@@ -1,0 +1,282 @@
+{
+  "euljiro_entrance_surroundings_1983/111947318/2015112202245948277.JPG": {
+    "max_attention": 0.024311181157827377,
+    "attention_entropy": 5.102490425109863,
+    "top_10_patch_fraction": 0.1731451153755188
+  },
+  "euljiro_entrance_surroundings_1983/111947318/2015112202245950134.JPG": {
+    "max_attention": 0.023573188111186028,
+    "attention_entropy": 5.094640731811523,
+    "top_10_patch_fraction": 0.1818915754556656
+  },
+  "euljiro_entrance_surroundings_1983/111947318/2015112202245952068.JPG": {
+    "max_attention": 0.029611308127641678,
+    "attention_entropy": 4.977802276611328,
+    "top_10_patch_fraction": 0.19764795899391174
+  },
+  "euljiro_entrance_surroundings_1983/111947318/2015112202245953925.JPG": {
+    "max_attention": 0.025947483256459236,
+    "attention_entropy": 5.1965508460998535,
+    "top_10_patch_fraction": 0.14998431503772736
+  },
+  "euljiro_entrance_surroundings_1983/111947318/2015112202245955812.JPG": {
+    "max_attention": 0.023577826097607613,
+    "attention_entropy": 5.098583698272705,
+    "top_10_patch_fraction": 0.18175192177295685
+  },
+  "euljiro_entrance_surroundings_1983/111947318/2015112202245957731.JPG": {
+    "max_attention": 0.02582540549337864,
+    "attention_entropy": 5.111433982849121,
+    "top_10_patch_fraction": 0.17160654067993164
+  },
+  "euljiro_entrance_surroundings_1983/111947318/2015112707240640289.JPG": {
+    "max_attention": 0.024122143164277077,
+    "attention_entropy": 5.289002895355225,
+    "top_10_patch_fraction": 0.13748227059841156
+  },
+  "euljiro_entrance_surroundings_1983/111947318/2015112707240641014.JPG": {
+    "max_attention": 0.014678874053061008,
+    "attention_entropy": 5.301407814025879,
+    "top_10_patch_fraction": 0.1208968460559845
+  },
+  "euljiro_entrance_surroundings_1983/111947318/2015113020243907060.JPG": {
+    "max_attention": 0.02792437933385372,
+    "attention_entropy": 4.997528553009033,
+    "top_10_patch_fraction": 0.19795995950698853
+  },
+  "euljiro_entrance_surroundings_1983/111947318/2015113020243907840.JPG": {
+    "max_attention": 0.03187628462910652,
+    "attention_entropy": 5.108745574951172,
+    "top_10_patch_fraction": 0.17325125634670258
+  },
+  "euljiro_entrance_surroundings_1983/111947318/2015113020243908652.JPG": {
+    "max_attention": 0.017739107832312584,
+    "attention_entropy": 5.157535552978516,
+    "top_10_patch_fraction": 0.14566285908222198
+  },
+  "euljiro_entrance_surroundings_1983/111947318/2015120321240357154.JPG": {
+    "max_attention": 0.028646621853113174,
+    "attention_entropy": 4.98890495300293,
+    "top_10_patch_fraction": 0.20109698176383972
+  },
+  "euljiro_entrance_underpass_construction_1976/111946172/2015112114241122006.JPG": {
+    "max_attention": 0.0337112657725811,
+    "attention_entropy": 5.197944164276123,
+    "top_10_patch_fraction": 0.17968057096004486
+  },
+  "euljiro_entrance_underpass_construction_1976/111946172/2015112114241125782.JPG": {
+    "max_attention": 0.024562615901231766,
+    "attention_entropy": 5.115272521972656,
+    "top_10_patch_fraction": 0.18226009607315063
+  },
+  "euljiro_entrance_underpass_construction_1976/111946172/2015113017240421485.JPG": {
+    "max_attention": 0.024638814851641655,
+    "attention_entropy": 5.201638221740723,
+    "top_10_patch_fraction": 0.1570596694946289
+  },
+  "euljiro_entrance_underpass_construction_1976/111946172/2015113017240422358.JPG": {
+    "max_attention": 0.06704317778348923,
+    "attention_entropy": 5.0295820236206055,
+    "top_10_patch_fraction": 0.21250957250595093
+  },
+  "euljiro_entrance_underpass_construction_1976/111946172/2015113017240423060.JPG": {
+    "max_attention": 0.03575148060917854,
+    "attention_entropy": 5.2066826820373535,
+    "top_10_patch_fraction": 0.16764190793037415
+  },
+  "euljiro_entrance_underpass_construction_1976/111946172/2015120322240251327.JPG": {
+    "max_attention": 0.038342107087373734,
+    "attention_entropy": 5.024197101593018,
+    "top_10_patch_fraction": 0.2204899936914444
+  },
+  "euljiro_line2_opening_1983/111937895/2015112200245639980.JPG": {
+    "max_attention": 0.026418505236506462,
+    "attention_entropy": 5.217871189117432,
+    "top_10_patch_fraction": 0.15536361932754517
+  },
+  "euljiro_line2_opening_1983/111937895/2015112200245641914.JPG": {
+    "max_attention": 0.027712268754839897,
+    "attention_entropy": 5.1293840408325195,
+    "top_10_patch_fraction": 0.1709366738796234
+  },
+  "euljiro_line2_opening_1983/111937895/2015112200245643911.JPG": {
+    "max_attention": 0.037154536694288254,
+    "attention_entropy": 5.2054948806762695,
+    "top_10_patch_fraction": 0.16356030106544495
+  },
+  "euljiro_line2_opening_1983/111937895/2015112200245645627.JPG": {
+    "max_attention": 0.03048018366098404,
+    "attention_entropy": 5.194502830505371,
+    "top_10_patch_fraction": 0.17590928077697754
+  },
+  "euljiro_line2_opening_1983/111937895/2015112200245647343.JPG": {
+    "max_attention": 0.038420420140028,
+    "attention_entropy": 4.989964008331299,
+    "top_10_patch_fraction": 0.22983762621879578
+  },
+  "euljiro_line2_opening_1983/111937895/2015112200245649168.JPG": {
+    "max_attention": 0.024932604283094406,
+    "attention_entropy": 5.252889633178711,
+    "top_10_patch_fraction": 0.1507086604833603
+  },
+  "euljiro_line2_opening_1983/111937895/2015112200245651024.JPG": {
+    "max_attention": 0.029382377862930298,
+    "attention_entropy": 5.038849830627441,
+    "top_10_patch_fraction": 0.210190549492836
+  },
+  "euljiro_line2_opening_1983/111937895/2015112200245652834.JPG": {
+    "max_attention": 0.03491095453500748,
+    "attention_entropy": 4.670699119567871,
+    "top_10_patch_fraction": 0.2568880319595337
+  },
+  "euljiro_line2_opening_1983/111937895/2015112200245655455.JPG": {
+    "max_attention": 0.05810506269335747,
+    "attention_entropy": 4.626363754272461,
+    "top_10_patch_fraction": 0.33545541763305664
+  },
+  "euljiro_line2_opening_1983/111937895/2015112200245657717.JPG": {
+    "max_attention": 0.04388498514890671,
+    "attention_entropy": 4.819393157958984,
+    "top_10_patch_fraction": 0.2719572186470032
+  },
+  "euljiro_line2_opening_1983/111937895/2015112201243917370.JPG": {
+    "max_attention": 0.04335067421197891,
+    "attention_entropy": 4.615020275115967,
+    "top_10_patch_fraction": 0.2944212853908539
+  },
+  "euljiro_line2_opening_1983/111937895/2015112201243920085.JPG": {
+    "max_attention": 0.04536066949367523,
+    "attention_entropy": 4.940992832183838,
+    "top_10_patch_fraction": 0.2297021895647049
+  },
+  "euljiro_line2_opening_1983/111937895/2015112201243923002.JPG": {
+    "max_attention": 0.022998182103037834,
+    "attention_entropy": 4.8149309158325195,
+    "top_10_patch_fraction": 0.19468770921230316
+  },
+  "euljiro_line2_opening_1983/111937895/2015112201243925357.JPG": {
+    "max_attention": 0.03122979961335659,
+    "attention_entropy": 4.740010738372803,
+    "top_10_patch_fraction": 0.26705503463745117
+  },
+  "euljiro_line2_opening_1983/111937895/2015112201243927526.JPG": {
+    "max_attention": 0.03173357620835304,
+    "attention_entropy": 5.045434474945068,
+    "top_10_patch_fraction": 0.19992567598819733
+  },
+  "euljiro_line2_opening_1983/111937895/2015112201243930334.JPG": {
+    "max_attention": 0.06327144801616669,
+    "attention_entropy": 4.615145206451416,
+    "top_10_patch_fraction": 0.2929173707962036
+  },
+  "euljiro_line2_opening_1983/111937895/2015112201243932767.JPG": {
+    "max_attention": 0.027730578556656837,
+    "attention_entropy": 5.175675392150879,
+    "top_10_patch_fraction": 0.1748429834842682
+  },
+  "euljiro_line2_opening_1983/111937895/2015112201243935092.JPG": {
+    "max_attention": 0.027858097106218338,
+    "attention_entropy": 5.145113468170166,
+    "top_10_patch_fraction": 0.17189139127731323
+  },
+  "euljiro_line2_opening_1983/111937895/2015112201243937385.JPG": {
+    "max_attention": 0.033536769449710846,
+    "attention_entropy": 4.85761833190918,
+    "top_10_patch_fraction": 0.2524377107620239
+  },
+  "euljiro_line2_opening_1983/111937895/2015112706242648723.JPG": {
+    "max_attention": 0.04918728396296501,
+    "attention_entropy": 4.91152286529541,
+    "top_10_patch_fraction": 0.23598279058933258
+  },
+  "euljiro_line2_opening_1983/111937895/2015112706242650261.JPG": {
+    "max_attention": 0.04535205289721489,
+    "attention_entropy": 4.642116069793701,
+    "top_10_patch_fraction": 0.2653930187225342
+  },
+  "euljiro_line2_opening_1983/111937895/2015112706242651090.JPG": {
+    "max_attention": 0.03501047566533089,
+    "attention_entropy": 4.970870018005371,
+    "top_10_patch_fraction": 0.22863754630088806
+  },
+  "euljiro_line2_opening_1983/111937895/2015112706245614505.JPG": {
+    "max_attention": 0.03972844034433365,
+    "attention_entropy": 5.104796409606934,
+    "top_10_patch_fraction": 0.2254992127418518
+  },
+  "euljiro_line2_opening_1983/111937895/2015112706245615279.JPG": {
+    "max_attention": 0.02360791712999344,
+    "attention_entropy": 5.259434700012207,
+    "top_10_patch_fraction": 0.1454497128725052
+  },
+  "euljiro_line2_opening_1983/111937895/2015112706245616158.JPG": {
+    "max_attention": 0.039537761360406876,
+    "attention_entropy": 4.758608818054199,
+    "top_10_patch_fraction": 0.25763773918151855
+  },
+  "euljiro_line2_opening_1983/111937895/2015113022242710993.JPG": {
+    "max_attention": 0.025768067687749863,
+    "attention_entropy": 5.05958366394043,
+    "top_10_patch_fraction": 0.19290199875831604
+  },
+  "euljiro_line2_opening_1983/111937895/2015113022242711773.JPG": {
+    "max_attention": 0.0395510159432888,
+    "attention_entropy": 5.1274094581604,
+    "top_10_patch_fraction": 0.20022062957286835
+  },
+  "euljiro_line2_opening_1983/111937895/2015113022242746312.JPG": {
+    "max_attention": 0.03924354538321495,
+    "attention_entropy": 4.719696044921875,
+    "top_10_patch_fraction": 0.23880043625831604
+  },
+  "euljiro_line2_opening_1983/111937895/2015113022242747981.JPG": {
+    "max_attention": 0.03281163051724434,
+    "attention_entropy": 4.894862174987793,
+    "top_10_patch_fraction": 0.2561730444431305
+  },
+  "euljiro_line2_opening_1983/111937895/2015113022242749369.JPG": {
+    "max_attention": 0.03963446989655495,
+    "attention_entropy": 4.60693359375,
+    "top_10_patch_fraction": 0.2830429673194885
+  },
+  "euljiro_line2_opening_1983/111937895/2015113022243020144.JPG": {
+    "max_attention": 0.026724986732006073,
+    "attention_entropy": 5.210204124450684,
+    "top_10_patch_fraction": 0.17685610055923462
+  },
+  "euljiro_line2_opening_1983/111937895/2015113022243020799.JPG": {
+    "max_attention": 0.04967249184846878,
+    "attention_entropy": 4.980470657348633,
+    "top_10_patch_fraction": 0.23750999569892883
+  },
+  "euljiro_line2_opening_1983/111937895/2015113022243021563.JPG": {
+    "max_attention": 0.045640941709280014,
+    "attention_entropy": 5.063836574554443,
+    "top_10_patch_fraction": 0.19986312091350555
+  },
+  "euljiro_line2_opening_1983/111937895/2015113022243022374.JPG": {
+    "max_attention": 0.03836400434374809,
+    "attention_entropy": 4.636025905609131,
+    "top_10_patch_fraction": 0.25783151388168335
+  },
+  "euljiro_line2_opening_1983/111937895/2015113022243024012.JPG": {
+    "max_attention": 0.04098404198884964,
+    "attention_entropy": 4.889000415802002,
+    "top_10_patch_fraction": 0.23693203926086426
+  },
+  "euljiro_line2_opening_1983/111937895/2015113022243100220.JPG": {
+    "max_attention": 0.0310820322483778,
+    "attention_entropy": 5.069685935974121,
+    "top_10_patch_fraction": 0.18031959235668182
+  },
+  "euljiro_line2_opening_1983/111937895/2015120321241311753.JPG": {
+    "max_attention": 0.025053691118955612,
+    "attention_entropy": 4.995234489440918,
+    "top_10_patch_fraction": 0.2103993147611618
+  },
+  "euljiro_line2_opening_1983/111937895/2015120321244058944.JPG": {
+    "max_attention": 0.02176281251013279,
+    "attention_entropy": 5.2781548500061035,
+    "top_10_patch_fraction": 0.1553942859172821
+  }
+}

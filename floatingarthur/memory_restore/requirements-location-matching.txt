@@ -1,0 +1,5 @@
+# Use this isolated set in a project virtual environment. Do not replace the
+# existing restoration runtime requirements.
+numpy>=1.24,<3
+torch>=1.12
+transformers>=4.39,<5
