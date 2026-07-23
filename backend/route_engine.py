@@ -85,6 +85,21 @@ _connect("E4_EAST", "DDP_GATE", 7, 470)
 _connect("E3_WEST", "E3_EAST", 10, 610, accessible=True)
 _connect("E4_WEST", "E4_EAST", 10, 620, accessible=True)
 
+# 지하상가는 사실상 일직선 복도다(을지로입구→3가→4가→DDP). 노드의 복도상 순서를
+# 매겨두고, 코스 탐색이 한쪽 방향으로만 진행하도록 강제해 같은 구간을 두 번
+# 왕복하는 비현실적인 경로를 막는다.
+NODE_ORDER = {
+    "E1_GATE": 0,
+    "E1_HALL": 1,
+    "E3_WEST": 2,
+    "E3_CENTER": 3,
+    "E3_EAST": 4,
+    "E4_WEST": 5,
+    "E4_CENTER": 6,
+    "E4_EAST": 7,
+    "DDP_GATE": 8,
+}
+
 
 WEEKDAYS = tuple(range(0, 6))
 EVERYDAY = tuple(range(0, 7))
@@ -232,6 +247,13 @@ def recommend_route(
     candidates = [poi for poi in open_candidates if not accessible or poi.accessible]
     max_stops = 2 if minutes <= 15 else 3 if minutes <= 35 else 5
 
+    # 목적지가 정해져 있으면 처음부터 그 방향으로만 걷는다.
+    start_direction = 0
+    if destination_node:
+        delta = NODE_ORDER[destination_node] - NODE_ORDER[start_node]
+        if delta != 0:
+            start_direction = 1 if delta > 0 else -1
+
     best_result: dict | None = None
 
     def consider(
@@ -242,6 +264,7 @@ def recommend_route(
         stops: list[dict],
         path_nodes: list[str],
         visited: frozenset[str],
+        direction: int,
     ) -> None:
         nonlocal best_result
 
@@ -277,12 +300,21 @@ def recommend_route(
         if len(stops) >= max_stops:
             return
 
+        current_pos = NODE_ORDER[current_node]
         ranked = sorted(
             (poi for poi in candidates if poi.id not in visited),
             key=lambda poi: _candidate_score(poi, purpose, gate["zone"]),
             reverse=True,
         )
         for poi in ranked:
+            poi_pos = NODE_ORDER[poi.node]
+            # 이미 한쪽 방향으로 걷기 시작했다면, 지나온 구간을 되짚어가는
+            # 후보는 건너뛴다 (같은 복도 왕복 방지).
+            if direction > 0 and poi_pos < current_pos:
+                continue
+            if direction < 0 and poi_pos > current_pos:
+                continue
+
             walk_minutes, walk_meters, walk_path = shortest_path(current_node, poi.node, accessible)
             next_elapsed = elapsed + walk_minutes + poi.dwell_minutes
             if next_elapsed > minutes:
@@ -306,6 +338,9 @@ def recommend_route(
                 "walk_minutes_from_previous": walk_minutes,
                 "dwell_minutes": poi.dwell_minutes,
             }
+            next_direction = direction
+            if next_direction == 0 and poi_pos != current_pos:
+                next_direction = 1 if poi_pos > current_pos else -1
             consider(
                 poi.node,
                 next_elapsed,
@@ -314,9 +349,10 @@ def recommend_route(
                 stops + [stop],
                 _append_unique_path(path_nodes, walk_path),
                 visited | {poi.id},
+                next_direction,
             )
 
-    consider(start_node, 0, 0, 0, [], [start_node], frozenset())
+    consider(start_node, 0, 0, 0, [], [start_node], frozenset(), start_direction)
 
     if best_result is None:
         return {
