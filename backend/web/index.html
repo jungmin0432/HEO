@@ -345,6 +345,15 @@ video{width:100%;height:100%;object-fit:cover;display:block;transform:scaleX(-1)
 .mode-tabs{display:flex;gap:8px;margin:16px 20px 0}
 .mode-tab{flex:1;border:1px solid var(--line);background:var(--paper);border-radius:12px;padding:10px 6px;font-size:11.5px;font-weight:800;color:var(--ink-500);cursor:pointer;text-align:center}
 .mode-tab.active{background:var(--navy-900);border-color:var(--navy-900);color:#fdf6e6}
+.voice-row{display:flex;align-items:center;gap:10px;margin-top:10px}
+.voice-row .voice-hint{font-size:11px;color:var(--ink-500);font-weight:600}
+#voiceMicBtn.listening{background:var(--gold-500);border-color:var(--gold-500);color:#241a05}
+#voiceMicBtn.listening svg{animation:micpulse 1s ease-in-out infinite}
+@keyframes micpulse{0%,100%{opacity:1}50%{opacity:.4}}
+.ai-heard-card{margin:0 20px 4px;padding:11px 14px;border-radius:13px;background:var(--cream-50);border:1px solid var(--line)}
+.ai-heard-card .ahc-label{font-size:9.5px;font-weight:800;color:var(--gold-600);text-transform:uppercase;letter-spacing:.3px}
+.ai-heard-card .ahc-body{font-size:11.5px;color:var(--navy-900);font-weight:700;margin-top:4px;line-height:1.5}
+.ai-heard-card .ahc-engine{font-size:10px;color:var(--ink-500);font-weight:600;margin-top:3px}
 .place-rail{display:flex;gap:10px;overflow-x:auto;padding:2px 20px 4px;-webkit-overflow-scrolling:touch}
 .place-rail::-webkit-scrollbar{display:none}
 .place-card{flex:none;width:132px;border-radius:14px;overflow:hidden;border:2px solid transparent;background:var(--paper);box-shadow:var(--shadow-card);cursor:pointer}
@@ -408,6 +417,7 @@ video{width:100%;height:100%;object-fit:cover;display:block;transform:scaleX(-1)
       <symbol id="i-send" viewBox="0 0 24 24"><path d="M4 12l16-8-6 16-3-7-7-1z"/></symbol>
       <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 4v15m0 0l-5-5m5 5l5-5"/></symbol>
       <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v8a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 19z"/><path d="M9.5 20.5V14h5v6.5"/></symbol>
+      <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3.5" width="6" height="11" rx="3"/><path d="M5.5 12a6.5 6.5 0 0 0 13 0M12 18.5V21M9 21h6"/></symbol>
     </defs>
   </svg>
 
@@ -534,6 +544,29 @@ video{width:100%;height:100%;object-fit:cover;display:block;transform:scaleX(-1)
             <option value="DDP-01">DDP 연결부</option>
           </select>
         </div>
+
+        <div class="mode-tabs" id="routeModeTabs">
+          <button class="mode-tab active" data-mode="pick">직접 선택</button>
+          <button class="mode-tab" data-mode="voice">말로 요청하기</button>
+        </div>
+
+        <div id="routeVoiceMode" style="display:none">
+          <section class="section">
+            <div class="section-label"><svg class="icon"><use href="#i-ai"/></svg>AI에게 말하거나 적어보세요</div>
+            <textarea class="text-field" id="routeVoiceText" rows="3" placeholder="예: 을지로4가에서 60분 동안 쉬어가기 코스 추천해줘"></textarea>
+            <div class="voice-row">
+              <button class="btn-primary btn-ghost" id="voiceMicBtn" type="button" style="width:auto;padding:9px 16px;font-size:12.5px"><svg class="icon"><use href="#i-mic"/></svg><span id="voiceMicLabel">말하기</span></button>
+              <span class="voice-hint" id="voiceHint"></span>
+            </div>
+          </section>
+          <div id="voiceAiSlot"></div>
+          <div id="voiceErrorSlot"></div>
+          <div class="section" style="margin-top:14px">
+            <button class="btn-primary" id="voiceRecommendBtn"><svg class="icon"><use href="#i-ticket"/></svg><span id="voiceCtaLabel">AI로 코스 찾기</span></button>
+          </div>
+        </div>
+
+        <div id="routePickMode">
         <section class="section">
           <div class="section-label"><span><svg class="icon"><use href="#i-clock"/></svg>남은 시간</span></div>
           <div class="grid g4" id="minutes">
@@ -566,6 +599,7 @@ video{width:100%;height:100%;object-fit:cover;display:block;transform:scaleX(-1)
         <div id="routeErrorSlot"></div>
         <div class="section" style="margin-top:22px">
           <button class="btn-primary" id="recommendBtn"><svg class="icon"><use href="#i-ticket"/></svg><span id="ctaLabel">AI 코스 추천받기</span></button>
+        </div>
         </div>
       </div>
       <div id="route-result" style="display:none"></div>
@@ -843,6 +877,84 @@ $all(".map-node.gate").forEach(function(node){
     })
     .catch(function(e){ showError(e.message || "코스 추천 중 오류가 발생했습니다. (경로추천 서버가 켜져 있는지 확인해주세요)"); })
     .finally(function(){ btn.disabled = false; $("#ctaLabel").textContent = "AI 코스 추천받기"; });
+  });
+
+  /* ---- 말로 요청하기 (Web Speech API + AI 조건추출) ---- */
+  $all("#routeModeTabs .mode-tab").forEach(function(tab){
+    tab.addEventListener("click", function(){
+      $all("#routeModeTabs .mode-tab").forEach(function(t){ t.classList.remove("active"); });
+      tab.classList.add("active");
+      var isVoice = tab.dataset.mode === "voice";
+      $("#routeVoiceMode").style.display = isVoice ? "" : "none";
+      $("#routePickMode").style.display = isVoice ? "none" : "";
+    });
+  });
+
+  var PURPOSE_HEARD = { look:"둘러보기", memory:"사진·기억", make:"제작·기념품", rest:"휴식", move:"이동" };
+  var DEST_HEARD = { ddp:"DDP", hipjiro:"힙지로", bangsan:"방산시장", cheonggyecheon:"청계천", "euljiro-entrance":"을지로입구" };
+
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  var recognition = SR ? new SR() : null;
+  if (recognition){
+    recognition.lang = "ko-KR";
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+  }
+  $("#voiceMicBtn").addEventListener("click", function(){
+    if (!recognition){
+      $("#voiceHint").textContent = "이 브라우저는 음성 인식을 지원하지 않아요. 직접 입력해주세요.";
+      return;
+    }
+    var btn = this;
+    btn.classList.add("listening");
+    $("#voiceMicLabel").textContent = "듣는 중…";
+    $("#voiceHint").textContent = "";
+    try { recognition.start(); } catch(e){}
+  });
+  if (recognition){
+    recognition.onresult = function(e){
+      var transcript = e.results[0][0].transcript;
+      $("#routeVoiceText").value = transcript;
+    };
+    recognition.onerror = function(e){
+      $("#voiceHint").textContent = "음성을 인식하지 못했어요 (" + e.error + "). 다시 시도하거나 직접 입력해주세요.";
+    };
+    recognition.onend = function(){
+      $("#voiceMicBtn").classList.remove("listening");
+      $("#voiceMicLabel").textContent = "말하기";
+    };
+  }
+
+  function showVoiceErr(msg){ $("#voiceErrorSlot").innerHTML = '<div class="err-banner"><svg class="icon"><use href="#i-info"/></svg><span>' + msg + "</span></div>"; }
+  function clearVoiceErr(){ $("#voiceErrorSlot").innerHTML = ""; }
+
+  $("#voiceRecommendBtn").addEventListener("click", function(){
+    var text = $("#routeVoiceText").value.trim();
+    if (!text){ showVoiceErr("먼저 말하거나 요청 내용을 입력해주세요."); return; }
+    var btn = this;
+    clearVoiceErr();
+    $("#voiceAiSlot").innerHTML = "";
+    btn.disabled = true;
+    $("#voiceCtaLabel").textContent = "AI가 듣고 있어요…";
+    fetch(API_ROUTE + "/api/ai/routes/recommend", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ gate_token: state.gate, text: text })
+    })
+    .then(function(res){ return res.json().then(function(data){ return { ok: res.ok, data: data }; }); })
+    .then(function(out){
+      if (!out.ok) throw new Error(out.data.error || out.data.message || "코스 추천에 실패했습니다.");
+      var ai = out.data.ai || {};
+      var c = ai.interpreted_conditions || {};
+      var engineLabel = ai.engine === "openai" ? "AI(gpt-5-mini)가 직접 해석" : "네트워크·키 문제로 규칙기반 파서가 대신 해석";
+      $("#voiceAiSlot").innerHTML =
+        '<div class="ai-heard-card"><div class="ahc-label">AI가 이해한 조건</div>' +
+        '<div class="ahc-body">' + (c.minutes || "?") + "분 · " + (PURPOSE_HEARD[c.purpose] || c.purpose || "-") +
+        (c.destination ? " · " + (DEST_HEARD[c.destination] || c.destination) + " 방향" : "") + '</div>' +
+        '<div class="ahc-engine">' + engineLabel + '</div></div>';
+      renderResult(out.data);
+    })
+    .catch(function(e){ showVoiceErr(e.message || "코스 추천 중 오류가 발생했습니다."); })
+    .finally(function(){ btn.disabled = false; $("#voiceCtaLabel").textContent = "AI로 코스 찾기"; });
   });
 })();
 
