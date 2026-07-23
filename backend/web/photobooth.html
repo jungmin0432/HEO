@@ -404,12 +404,39 @@ function openCamera(){
   startStream();
 }
 
+// Some Windows laptops register a software "virtual camera" (meeting
+// background-blur tools, streaming apps, etc.) alongside the real webcam.
+// getUserMedia({facingMode}) can silently pick the virtual one, which grants
+// permission fine but never feeds real frames -- a persistent black screen
+// even after the user allows access. Detect that and switch to the real one.
+var VIRTUAL_CAM_HINTS = ['virtual', 'obs', 'snap camera', 'ivcam', 'droidcam', 'xsplit', 'mmhmm', 'manycam'];
+
+function isVirtualLabel(label){
+  var l = (label || '').toLowerCase();
+  return VIRTUAL_CAM_HINTS.some(function(hint){ return l.indexOf(hint) !== -1; });
+}
+
+function pickRealCamera(stream){
+  if (!navigator.mediaDevices.enumerateDevices) return Promise.resolve(stream);
+  var track = stream.getVideoTracks()[0];
+  if (!track || !isVirtualLabel(track.label)) return Promise.resolve(stream);
+  return navigator.mediaDevices.enumerateDevices().then(function(devices){
+    var real = devices.find(function(d){ return d.kind === 'videoinput' && !isVirtualLabel(d.label); });
+    if (!real) return stream;
+    stream.getTracks().forEach(function(t){ t.stop(); });
+    return navigator.mediaDevices.getUserMedia({
+      video: { deviceId: { exact: real.deviceId } }, audio: false
+    });
+  }).catch(function(){ return stream; });
+}
+
 function startStream(){
   if (state.stream){ state.stream.getTracks().forEach(function(t){ t.stop(); }); state.stream = null; }
   if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia){
     showCamError(); return;
   }
   navigator.mediaDevices.getUserMedia({ video: { facingMode: state.facing }, audio:false })
+    .then(function(stream){ return pickRealCamera(stream); })
     .then(function(stream){
       state.stream = stream;
       video.srcObject = stream;
