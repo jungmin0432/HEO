@@ -116,6 +116,12 @@ def _unverified_store_pois() -> list[dict]:
         category = STORE_CATEGORIES.get(name)
         dwell, purpose = _CATEGORY_PROFILE.get(category, _DEFAULT_PROFILE)
         detail = f"{category} (이름으로 추정)" if category else "지하상가 입점 상호"
+        # Precise position is unknown, so exact inter-store distance can't be
+        # computed either — but showing "도보 0분" for every unverified stop
+        # (they all share one zone-center node) reads as obviously fake.
+        # A small deterministic per-store offset (2-6 min) stands in for
+        # "somewhere in this zone" instead of literally zero.
+        walk_offset = 2 + (i * 7 + 3) % 5
         out.append({
             "id": f"real-{i:03d}",
             "title": name,
@@ -128,6 +134,7 @@ def _unverified_store_pois() -> list[dict]:
             "status": "partner_store",
             "status_label": "기존 점포",
             "location_verified": False,
+            "walk_offset": walk_offset,
         })
     return out
 
@@ -159,6 +166,7 @@ def _candidate_payload(gate_token: str, minutes: int, accessible: bool, now_valu
             "walk_minutes_from_gate": walk_minutes,
             "walk_meters_from_gate": walk_meters,
             "location_verified": True,
+            "walk_offset": 0,
         })
 
     # Free-tier Groq TPM limits (8000 tokens/request) cap how many candidates
@@ -168,6 +176,8 @@ def _candidate_payload(gate_token: str, minutes: int, accessible: bool, now_valu
     UNVERIFIED_CAP = 40
     for entry in _unverified_store_pois()[:UNVERIFIED_CAP]:
         walk_minutes, walk_meters, _ = shortest_path(gate["node"], entry["node"], accessible)
+        walk_minutes += entry["walk_offset"]
+        walk_meters += entry["walk_offset"] * 60
         if walk_minutes + entry["dwell_minutes"] > minutes:
             continue
         items.append({
@@ -184,6 +194,7 @@ def _candidate_payload(gate_token: str, minutes: int, accessible: bool, now_valu
             "walk_minutes_from_gate": walk_minutes,
             "walk_meters_from_gate": walk_meters,
             "location_verified": False,
+            "walk_offset": entry["walk_offset"],
         })
     return items
 
@@ -305,6 +316,12 @@ def _validate_and_build(
     for sid in kept_ids:
         c = by_id[sid]
         walk_minutes, walk_meters, walk_path = shortest_path(current_node, c["node"], accessible)
+        # Unverified stops share one zone-center node, so raw shortest_path
+        # would read 0 for two of them back to back. Add each store's own
+        # disclosed walk_offset so consecutive stops don't all show "도보 0분".
+        offset = c.get("walk_offset", 0)
+        walk_minutes += offset
+        walk_meters += offset * 60
         next_elapsed = elapsed + walk_minutes + c["dwell_minutes"]
         if destination_node:
             reserve_minutes, _, _ = shortest_path(c["node"], destination_node, accessible)
