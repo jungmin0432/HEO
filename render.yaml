@@ -24,3 +24,14 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.9
+
+  - type: web
+    name: euljiro-memory-restore
+    runtime: python
+    rootDir: memory_restore
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn -w 1 -b 0.0.0.0:$PORT "app:create_app()"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9

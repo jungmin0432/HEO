@@ -3,3 +3,7 @@ __pycache__/
 .venv/
 venv/
 .DS_Store
+memory_restore/outputs/
+memory_restore/uploads/
+memory_restore/__pycache__/
+memory_restore/**/__pycache__/

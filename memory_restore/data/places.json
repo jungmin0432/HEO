@@ -1,0 +1,70 @@
+{
+  "places": [
+    {
+      "id": "euljiro-line2-opening-1983-corridor",
+      "title": "을지로 2호선 개통 당시 지하 연결 공간",
+      "year": 1983,
+      "district": "을지로 생활권",
+      "matching_status": "REFERENCE",
+      "matching_status_label": "역사 참고",
+      "matching_note": "1983년 을지로 2호선 개통 기록의 지하 연결 공간 사진이다. 현재 장소와의 동일 시점은 검증되지 않았으므로, 현재 사진과 1:1 비교하지 않는다.",
+      "historical_asset_path": "history_photo/euljiro_line2_opening_1983/111937895/2015112201243932767.JPG",
+      "archive": {
+        "title": "서울 지하철 2호선 을지로 구간 개통",
+        "record_id": "RG5-SR89-IT2157",
+        "date": "1983-09-16",
+        "source_url": "https://archives.seoul.go.kr/item/0000000000002157",
+        "attribution": "서울기록원, 서울 지하철 2호선 을지로 구간 개통, 1983"
+      },
+      "current_reference": null,
+      "demo_role": "주 복원 시연",
+      "tags": ["지하 연결 공간", "도시 인프라", "보존형 복원"]
+    },
+    {
+      "id": "euljiro-entrance-underpass-1976",
+      "title": "을지로입구 지하도 착공",
+      "year": 1976,
+      "district": "을지로입구",
+      "matching_status": "REFERENCE",
+      "matching_status_label": "역사 참고",
+      "matching_note": "지하 공간이 조성된 시점을 설명하는 자료다. 지하상가 내부의 과거 모습으로 표기하지 않는다.",
+      "historical_asset_path": "history_photo/euljiro_entrance_underpass_construction_1976/111946172/2015112114241122006.JPG",
+      "archive": {
+        "title": "을지로입구 지하도 착공",
+        "record_id": "RG5-SR90-IT2610",
+        "date": "1976-10-02",
+        "source_url": "https://archives.seoul.go.kr/item/2610",
+        "attribution": "서울기록원, 을지로입구 지하도 착공, 1976"
+      },
+      "current_reference": null,
+      "demo_role": "조성 역사 보조 서사",
+      "tags": ["지하도 조성", "을지로입구", "도시 기억"]
+    },
+    {
+      "id": "euljiro-entrance-surroundings-1983",
+      "title": "을지로입구와 주변",
+      "year": 1983,
+      "district": "을지로입구",
+      "matching_status": "NEARBY",
+      "matching_status_label": "인근 생활권",
+      "matching_note": "입구와 지상 주변을 보여 주는 사진이다. 현재 지하공간 안내와 연결할 수 있지만, 지하상가 내부의 동일 위치 비교로 표기하지 않는다.",
+      "historical_asset_path": "history_photo/euljiro_entrance_surroundings_1983/111947318/2015112707240640289.JPG",
+      "archive": {
+        "title": "을지로 입구 및 주변촬영",
+        "record_id": "RG5-SR94-IT4356",
+        "date": "1983",
+        "source_url": "https://archives.seoul.go.kr/item/4356",
+        "attribution": "서울기록원, 을지로 입구 및 주변촬영, 1983"
+      },
+      "current_reference": {
+        "asset_path": "real_use/euljiro3_underway_shelter_2024_sfc.jpg",
+        "title": "을지아랫길 쉼터 소개 사진",
+        "year": 2024,
+        "source_url": "https://sisul.or.kr/open_content/publicity/bbs/bbsMsgDetail.do?bcd=pub_news&msg_seq=892",
+        "note": "공간 참고 이미지이며, 정확히 같은 촬영 지점이라는 주장을 하지 않는다."
+      },
+      "demo_role": "지상-지하 연결 안내 보조 서사",
+      "tags": ["을지로입구", "지상 연결", "현재 공간 참고"]
+    }
+  ]
+}
