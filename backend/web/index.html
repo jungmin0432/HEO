@@ -1089,12 +1089,8 @@ $all(".map-node.gate").forEach(function(node){
         renderCandidates(out.data);
         $("#restoreGoSection").style.display = "block";
       })
-      .catch(function(e){
-        var msg = e.message || "";
-        var isAiOff = /runtime dependencies are not installed/i.test(msg);
-        showErr(isAiOff
-          ? "이 배포 환경에서는 AI 위치매칭이 꺼져 있어요. 기록 비교 없이 바로 복원할 수 있어요."
-          : (msg || "기억복원소 서버에 연결하지 못했습니다. (5002 포트가 켜져 있는지 확인해주세요)"));
+      .catch(function(){
+        clearErr();
         $("#restoreGoSection").style.display = "block";
       })
       .finally(function(){ btn.disabled = false; btn.innerHTML = origHtml; });
