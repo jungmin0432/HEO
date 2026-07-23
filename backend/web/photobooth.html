@@ -418,7 +418,11 @@ function startStream(){
     .catch(function(){ showCamError(); });
 }
 
-function showCamError(){ $('#camError').classList.add('show'); }
+function showCamError(message){
+  $('#camError').querySelector('p').innerHTML =
+    message || '카메라 권한을 확인할 수 없어요.<br/>브라우저 카메라 접근을 허용하거나, 사진 파일로 대신 만들어보세요.';
+  $('#camError').classList.add('show');
+}
 
 $('#camSwitch').addEventListener('click', function(){
   state.facing = state.facing === 'user' ? 'environment' : 'user';
@@ -470,20 +474,37 @@ function flash(){
   f.classList.remove('flash'); void f.offsetWidth; f.classList.add('flash');
 }
 
-function captureFromVideo(){
+function captureFromVideo(retriesLeft){
+  if (retriesLeft === undefined) retriesLeft = 10;
+  // videoWidth/videoHeight can report nonzero before the first real frame is
+  // decoded on some Android/Chrome builds, which draws a solid black square.
+  // readyState >= 2 (HAVE_CURRENT_DATA) means an actual frame is available.
+  if (video.readyState < 2){
+    if (retriesLeft <= 0){ showCaptureError(); return; }
+    setTimeout(function(){ captureFromVideo(retriesLeft - 1); }, 150);
+    return;
+  }
   var vw = video.videoWidth, vh = video.videoHeight;
-  if (!vw || !vh) return;
-  var side = Math.min(vw, vh);
-  var sx = (vw - side) / 2, sy = (vh - side) / 2;
-  var canvas = document.createElement('canvas');
-  canvas.width = CELL; canvas.height = CELL;
-  var ctx = canvas.getContext('2d');
-  ctx.save();
-  if (state.facing === 'user'){ ctx.translate(CELL,0); ctx.scale(-1,1); }
-  ctx.drawImage(video, sx, sy, side, side, 0, 0, CELL, CELL);
-  ctx.restore();
-  flash();
-  addShot(canvas);
+  if (!vw || !vh){ showCaptureError(); return; }
+  try {
+    var side = Math.min(vw, vh);
+    var sx = (vw - side) / 2, sy = (vh - side) / 2;
+    var canvas = document.createElement('canvas');
+    canvas.width = CELL; canvas.height = CELL;
+    var ctx = canvas.getContext('2d');
+    ctx.save();
+    if (state.facing === 'user'){ ctx.translate(CELL,0); ctx.scale(-1,1); }
+    ctx.drawImage(video, sx, sy, side, side, 0, 0, CELL, CELL);
+    ctx.restore();
+    flash();
+    addShot(canvas);
+  } catch (e){
+    showCaptureError();
+  }
+}
+
+function showCaptureError(){
+  showCamError('이번 촬영을 처리하지 못했어요.<br/>사진 파일로 대신 만들거나, 닫고 다시 촬영해주세요.');
 }
 
 function handleFilesFallback(files){
@@ -534,7 +555,7 @@ function renderShotsStrip(){
     var t = document.createElement('div');
     t.className = 'thumb';
     var img = document.createElement('img');
-    img.src = c.toDataURL('image/jpeg', 0.85);
+    try { img.src = c.toDataURL('image/jpeg', 0.85); } catch (e) { /* leave blank rather than a broken-image icon */ }
     t.appendChild(img);
     wrap.appendChild(t);
   });
@@ -617,6 +638,18 @@ function drawEmblem(ctx, cx, cy, r, style, color, textColor){
 }
 
 function buildResult(){
+  try {
+    buildResultUnsafe();
+  } catch (e){
+    state.shots = [];
+    renderShotsStrip();
+    updateBadge();
+    $('#screen-cam').classList.add('show');
+    showCamError('시간네컷을 만드는 중 문제가 생겼어요.<br/>사진 파일로 다시 만들어보세요.');
+  }
+}
+
+function buildResultUnsafe(){
   var f = FRAMES[state.frame];
   var pad = 28, gap = 14, cellW = 480;
   var sidePad = f.perforation ? 16 : 0;
