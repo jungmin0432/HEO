@@ -935,21 +935,25 @@ $all(".map-node.gate").forEach(function(node){
     clearVoiceErr();
     $("#voiceAiSlot").innerHTML = "";
     btn.disabled = true;
-    $("#voiceCtaLabel").textContent = "AI가 듣고 있어요…";
-    fetch(API_ROUTE + "/api/ai/routes/recommend", {
+    $("#voiceCtaLabel").textContent = "AI가 코스를 설계하고 있어요…";
+    var minutesMatch = text.match(/(10|30|60|90)\s*분/);
+    fetch(API_ROUTE + "/api/ai/routes/design", {
       method: "POST", headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ gate_token: state.gate, text: text })
+      body: JSON.stringify({
+        gate_token: state.gate, text: text,
+        minutes: minutesMatch ? Number(minutesMatch[1]) : 60,
+      })
     })
     .then(function(res){ return res.json().then(function(data){ return { ok: res.ok, data: data }; }); })
     .then(function(out){
-      if (!out.ok) throw new Error(out.data.error || out.data.message || "코스 추천에 실패했습니다.");
-      var ai = out.data.ai || {};
-      var c = ai.interpreted_conditions || {};
-      var engineLabel = ai.engine === "openai" ? "AI(gpt-5-mini)가 직접 해석" : "네트워크·키 문제로 규칙기반 파서가 대신 해석";
+      if (!out.ok) throw new Error(out.data.error || out.data.message || "코스 설계에 실패했습니다.");
+      var isAi = out.data.engine === "ai_designer";
+      var engineLabel = isAi
+        ? "AI(" + (out.data.llm_model || "LLM") + ")가 직접 코스 설계"
+        : "AI 설계 실패 시 결정적 알고리즘으로 대체 (" + (out.data.engine_reason || "") + ")";
       $("#voiceAiSlot").innerHTML =
-        '<div class="ai-heard-card"><div class="ahc-label">AI가 이해한 조건</div>' +
-        '<div class="ahc-body">' + (c.minutes || "?") + "분 · " + (PURPOSE_HEARD[c.purpose] || c.purpose || "-") +
-        (c.destination ? " · " + (DEST_HEARD[c.destination] || c.destination) + " 방향" : "") + '</div>' +
+        '<div class="ai-heard-card"><div class="ahc-label">' + (isAi ? "AI가 설계한 이유" : "안내") + '</div>' +
+        '<div class="ahc-body">' + (out.data.engine_reason || "") + '</div>' +
         '<div class="ahc-engine">' + engineLabel + '</div></div>';
       renderResult(out.data);
     })

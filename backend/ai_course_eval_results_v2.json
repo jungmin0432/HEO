@@ -1,0 +1,1062 @@
+[
+  {
+    "model": "llama-3.3-70b-versatile",
+    "scenario_index": 0,
+    "text": "쉬면서 커피도 마시고 싶고, 유모차라 계단은 피하고 싶어요",
+    "engine": "ai_designer",
+    "reason": "쉬면서 커피 마실 수 있는 곳과 계단 없는 곳을 선택했습니다.",
+    "stops": [
+      {
+        "title": "Azit Coffee (카페)",
+        "verified": true
+      },
+      {
+        "title": "을지로 아뜨리애 갤러리 (전시공간)",
+        "verified": true
+      }
+    ],
+    "walking_distance_m": 0,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 0.82,
+    "llm_usage": {
+      "queue_time": 0.165891251,
+      "prompt_tokens": 2873,
+      "prompt_time": 0.156140804,
+      "completion_tokens": 51,
+      "completion_time": 0.181834581,
+      "total_tokens": 2924,
+      "total_time": 0.337975385
+    },
+    "error": null
+  },
+  {
+    "model": "llama-3.3-70b-versatile",
+    "scenario_index": 1,
+    "text": "아이랑 같이 왔는데 잠깐 볼만한 거 있을까요",
+    "engine": "ai_designer",
+    "reason": "아이와 함께 볼만한 곳이 있습니다",
+    "stops": [
+      {
+        "title": "서울 시간 파노라마",
+        "verified": true
+      }
+    ],
+    "walking_distance_m": 180,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 0.521,
+    "llm_usage": {
+      "queue_time": 0.058404426,
+      "prompt_tokens": 380,
+      "prompt_time": 0.022407687,
+      "completion_tokens": 33,
+      "completion_time": 0.099588519,
+      "total_tokens": 413,
+      "total_time": 0.121996206
+    },
+    "error": null
+  },
+  {
+    "model": "llama-3.3-70b-versatile",
+    "scenario_index": 2,
+    "text": "명함이랑 포스터 급하게 뽑아야 하는데 시간이 별로 없어요",
+    "engine": "ai_designer",
+    "reason": "명함과 포스터를 빠르게 뽑을 수 있는 곳",
+    "stops": [
+      {
+        "title": "명함랜드 1호 (사무용품·인쇄물)",
+        "verified": true
+      }
+    ],
+    "walking_distance_m": 1310,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [
+      "real-004",
+      "real-012",
+      "real-028",
+      "real-032",
+      "real-036"
+    ],
+    "elapsed_sec": 0.7,
+    "llm_usage": {
+      "queue_time": 0.058460627,
+      "prompt_tokens": 2870,
+      "prompt_time": 0.153704021,
+      "completion_tokens": 68,
+      "completion_time": 0.170823868,
+      "total_tokens": 2938,
+      "total_time": 0.324527889
+    },
+    "error": null
+  },
+  {
+    "model": "llama-3.3-70b-versatile",
+    "scenario_index": 3,
+    "text": "옛날 사진 보고 싶고 DDP 쪽으로 넘어갈 거예요",
+    "engine": "ai_designer",
+    "reason": "사진과 추억을 볼 수 있는 곳을 포함하여 DDP 쪽으로 이동하기 좋은 순서입니다.",
+    "stops": [
+      {
+        "title": "서울 시간 파노라마",
+        "verified": true
+      },
+      {
+        "title": "기억 아카이브 월",
+        "verified": true
+      },
+      {
+        "title": "AI 사진복원 스테이션",
+        "verified": true
+      },
+      {
+        "title": "도시 시간중첩 월",
+        "verified": true
+      }
+    ],
+    "walking_distance_m": 2700,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 0.932,
+    "llm_usage": {
+      "queue_time": 0.160687415,
+      "prompt_tokens": 2866,
+      "prompt_time": 0.294188086,
+      "completion_tokens": 65,
+      "completion_time": 0.211361258,
+      "total_tokens": 2931,
+      "total_time": 0.505549344
+    },
+    "error": null
+  },
+  {
+    "model": "llama-3.3-70b-versatile",
+    "scenario_index": 4,
+    "text": "I have 30 minutes, want to see some art and grab a coffee",
+    "engine": "ai_designer",
+    "reason": "30분 동안 예술을 감상하고 커피를 마실 수 있습니다.",
+    "stops": [
+      {
+        "title": "틈새미술관 (전시공간)",
+        "verified": true
+      }
+    ],
+    "walking_distance_m": 260,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [
+      "e3-coffee12"
+    ],
+    "elapsed_sec": 0.599,
+    "llm_usage": {
+      "queue_time": 0.059083683,
+      "prompt_tokens": 2864,
+      "prompt_time": 0.144658329,
+      "completion_tokens": 49,
+      "completion_time": 0.140907718,
+      "total_tokens": 2913,
+      "total_time": 0.285566047
+    },
+    "error": null
+  },
+  {
+    "model": "llama-3.3-70b-versatile",
+    "scenario_index": 5,
+    "text": "그냥 아무거나 구경하고 싶어요",
+    "engine": "ai_designer",
+    "reason": "을지로입구 서쪽에서 가까운 곳을 구경하기 좋습니다.",
+    "stops": [
+      {
+        "title": "서울 시간 파노라마",
+        "verified": true
+      },
+      {
+        "title": "명함랜드 1호 (사무용품·인쇄물)",
+        "verified": true
+      },
+      {
+        "title": "캐치문",
+        "verified": false
+      },
+      {
+        "title": "달고나",
+        "verified": false
+      },
+      {
+        "title": "파리바게트",
+        "verified": false
+      },
+      {
+        "title": "슈굿(편한신발)",
+        "verified": false
+      },
+      {
+        "title": "BOB텔레콤",
+        "verified": false
+      }
+    ],
+    "walking_distance_m": 180,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [
+      "real-020",
+      "real-024",
+      "real-028",
+      "real-032",
+      "real-036"
+    ],
+    "elapsed_sec": 0.867,
+    "llm_usage": {
+      "queue_time": 0.059380579,
+      "prompt_tokens": 2858,
+      "prompt_time": 0.276612806,
+      "completion_tokens": 108,
+      "completion_time": 0.254720636,
+      "total_tokens": 2966,
+      "total_time": 0.531333442
+    },
+    "error": null
+  },
+  {
+    "model": "llama-3.3-70b-versatile",
+    "scenario_index": 6,
+    "text": "빨리 둘러보고 싶은데 뭔가 기억에 남는 것도 보고 싶어요",
+    "engine": "ai_designer",
+    "reason": "시간이 짧은 경우 기억에 남는 곳을 빠르게 둘러볼 수 있습니다",
+    "stops": [
+      {
+        "title": "제작 재료 라이브러리",
+        "verified": true
+      }
+    ],
+    "walking_distance_m": 260,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [
+      "e4-translate"
+    ],
+    "elapsed_sec": 0.597,
+    "llm_usage": {
+      "queue_time": 0.161030906,
+      "prompt_tokens": 432,
+      "prompt_time": 0.021917089,
+      "completion_tokens": 47,
+      "completion_time": 0.165149347,
+      "total_tokens": 479,
+      "total_time": 0.187066436
+    },
+    "error": null
+  },
+  {
+    "model": "llama-3.3-70b-versatile",
+    "scenario_index": 7,
+    "text": "휠체어라서 엘리베이터로만 이동 가능해요, 쉬었다 갈 곳 필요해요",
+    "engine": "heuristic_fallback",
+    "reason": "Groq request failed: 429 {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01ky702ga2ekq9a2zjg0at6q9v` service tier `on_demand` on tokens per minute (TPM): Limit 12000, Used 9672",
+    "stops": [
+      {
+        "title": "Azit Coffee (카페)",
+        "verified": null
+      },
+      {
+        "title": "COFFEE #12 (카페)",
+        "verified": null
+      }
+    ],
+    "walking_distance_m": 1630,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 0.289,
+    "llm_usage": {},
+    "error": null
+  },
+  {
+    "model": "llama-3.3-70b-versatile",
+    "scenario_index": 8,
+    "text": "사진 인화하고 카메라 상담도 받고 싶어요",
+    "engine": "ai_designer",
+    "reason": "사진 인화와 카메라 상담이 가능합니다",
+    "stops": [
+      {
+        "title": "한독카메라 (카메라·사진)",
+        "verified": true
+      }
+    ],
+    "walking_distance_m": 510,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [
+      "real-028"
+    ],
+    "elapsed_sec": 0.662,
+    "llm_usage": {
+      "queue_time": 0.05247274,
+      "prompt_tokens": 2209,
+      "prompt_time": 0.191110947,
+      "completion_tokens": 39,
+      "completion_time": 0.138146747,
+      "total_tokens": 2248,
+      "total_time": 0.329257694
+    },
+    "error": null
+  },
+  {
+    "model": "llama-3.3-70b-versatile",
+    "scenario_index": 9,
+    "text": "제작 상담도 받고 쉬기도 하고 구경도 하고 싶어요, 다 하고 싶어요",
+    "engine": "heuristic_fallback",
+    "reason": "Groq request failed: 429 {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01ky702ga2ekq9a2zjg0at6q9v` service tier `on_demand` on tokens per minute (TPM): Limit 12000, Used 1032",
+    "stops": [
+      {
+        "title": "제작 재료 라이브러리",
+        "verified": null
+      },
+      {
+        "title": "메이커 시연 포켓",
+        "verified": null
+      },
+      {
+        "title": "AI 제작통역 스테이션",
+        "verified": null
+      },
+      {
+        "title": "현대종합싸인 (사무용품·인쇄물)",
+        "verified": null
+      },
+      {
+        "title": "완성품 쇼케이스·픽업",
+        "verified": null
+      }
+    ],
+    "walking_distance_m": 980,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 0.239,
+    "llm_usage": {},
+    "error": null
+  },
+  {
+    "model": "llama-3.3-70b-versatile",
+    "scenario_index": 10,
+    "text": "힙지로 쪽으로 갈 건데 가는 길에 뭐 좀 보고 싶어요",
+    "engine": "ai_designer",
+    "reason": "을지로입구 서쪽에서 힙지로 쪽으로 가는 길에 볼 만한 곳",
+    "stops": [
+      {
+        "title": "서울 시간 파노라마",
+        "verified": true
+      },
+      {
+        "title": "캐치문",
+        "verified": false
+      },
+      {
+        "title": "달고나",
+        "verified": false
+      }
+    ],
+    "walking_distance_m": 590,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [
+      "real-008",
+      "real-012",
+      "real-016",
+      "real-020",
+      "real-024",
+      "real-028",
+      "real-032",
+      "real-036"
+    ],
+    "elapsed_sec": 0.885,
+    "llm_usage": {
+      "queue_time": 0.185428979,
+      "prompt_tokens": 1572,
+      "prompt_time": 0.081092317,
+      "completion_tokens": 106,
+      "completion_time": 0.290775434,
+      "total_tokens": 1678,
+      "total_time": 0.371867751
+    },
+    "error": null
+  },
+  {
+    "model": "llama-3.3-70b-versatile",
+    "scenario_index": 11,
+    "text": "그냥 커피만 한 잔 하고 싶어요",
+    "engine": "heuristic_fallback",
+    "reason": "AI가 고른 장소가 전부 검증에서 탈락해 기존 알고리즘으로 대체",
+    "stops": [],
+    "walking_distance_m": null,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 0.382,
+    "llm_usage": {},
+    "error": null
+  },
+  {
+    "model": "llama-3.1-8b-instant",
+    "scenario_index": 0,
+    "text": "쉬면서 커피도 마시고 싶고, 유모차라 계단은 피하고 싶어요",
+    "engine": "heuristic_fallback",
+    "reason": "Groq request failed: 400 {\"error\":{\"message\":\"Failed to generate JSON. Please adjust your prompt. See 'failed_generation' for more details.\",\"type\":\"invalid_request_error\",\"code\":\"json_validate_failed\",\"failed_generation\":\"ma",
+    "stops": [
+      {
+        "title": "Azit Coffee (카페)",
+        "verified": null
+      },
+      {
+        "title": "을지로 아뜨리애 갤러리 (전시공간)",
+        "verified": null
+      },
+      {
+        "title": "COFFEE #12 (카페)",
+        "verified": null
+      }
+    ],
+    "walking_distance_m": 1160,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 2.597,
+    "llm_usage": {},
+    "error": null
+  },
+  {
+    "model": "llama-3.1-8b-instant",
+    "scenario_index": 1,
+    "text": "아이랑 같이 왔는데 잠깐 볼만한 거 있을까요",
+    "engine": "ai_designer",
+    "reason": "가녕고 안세요 세요 총녕하 세요 주세요",
+    "stops": [
+      {
+        "title": "서울 시간 파노라마",
+        "verified": true
+      }
+    ],
+    "walking_distance_m": 180,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [
+      "e1-poster"
+    ],
+    "elapsed_sec": 0.523,
+    "llm_usage": {
+      "queue_time": 0.053082586,
+      "prompt_tokens": 380,
+      "prompt_time": 0.021531218,
+      "completion_tokens": 71,
+      "completion_time": 0.203138625,
+      "total_tokens": 451,
+      "total_time": 0.224669843
+    },
+    "error": null
+  },
+  {
+    "model": "llama-3.1-8b-instant",
+    "scenario_index": 2,
+    "text": "명함이랑 포스터 급하게 뽑아야 하는데 시간이 별로 없어요",
+    "engine": "heuristic_fallback",
+    "reason": "Groq request failed: 400 {\"error\":{\"message\":\"Failed to generate JSON. Please adjust your prompt. See 'failed_generation' for more details.\",\"type\":\"invalid_request_error\",\"code\":\"json_validate_failed\",\"failed_generation\":\"ma",
+    "stops": [
+      {
+        "title": "AI 제작통역 스테이션",
+        "verified": null
+      },
+      {
+        "title": "메이커 시연 포켓",
+        "verified": null
+      },
+      {
+        "title": "현대종합싸인 (사무용품·인쇄물)",
+        "verified": null
+      }
+    ],
+    "walking_distance_m": 510,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 2.763,
+    "llm_usage": {},
+    "error": null
+  },
+  {
+    "model": "llama-3.1-8b-instant",
+    "scenario_index": 3,
+    "text": "옛날 사진 보고 싶고 DDP 쪽으로 넘어갈 거예요",
+    "engine": "heuristic_fallback",
+    "reason": "Groq request failed: 429 {\"error\":{\"message\":\"Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01ky702ga2ekq9a2zjg0at6q9v` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 4557, Re",
+    "stops": [
+      {
+        "title": "틈새미술관 (전시공간)",
+        "verified": null
+      },
+      {
+        "title": "AI 사진복원 스테이션",
+        "verified": null
+      },
+      {
+        "title": "가족 기록 편집 테이블",
+        "verified": null
+      },
+      {
+        "title": "한독카메라 (카메라·사진)",
+        "verified": null
+      },
+      {
+        "title": "을지로 아뜨리애 갤러리 (전시공간)",
+        "verified": null
+      }
+    ],
+    "walking_distance_m": 1880,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 0.314,
+    "llm_usage": {},
+    "error": null
+  },
+  {
+    "model": "llama-3.1-8b-instant",
+    "scenario_index": 4,
+    "text": "I have 30 minutes, want to see some art and grab a coffee",
+    "engine": "heuristic_fallback",
+    "reason": "Groq request failed: 429 {\"error\":{\"message\":\"Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01ky702ga2ekq9a2zjg0at6q9v` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 4179, Re",
+    "stops": [
+      {
+        "title": "기억 아카이브 월",
+        "verified": null
+      },
+      {
+        "title": "서울 시간 파노라마",
+        "verified": null
+      },
+      {
+        "title": "명함랜드 1호 (사무용품·인쇄물)",
+        "verified": null
+      }
+    ],
+    "walking_distance_m": 920,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 0.251,
+    "llm_usage": {},
+    "error": null
+  },
+  {
+    "model": "llama-3.1-8b-instant",
+    "scenario_index": 5,
+    "text": "그냥 아무거나 구경하고 싶어요",
+    "engine": "heuristic_fallback",
+    "reason": "Groq request failed: 429 {\"error\":{\"message\":\"Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01ky702ga2ekq9a2zjg0at6q9v` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 3802, Re",
+    "stops": [
+      {
+        "title": "명함랜드 1호 (사무용품·인쇄물)",
+        "verified": null
+      },
+      {
+        "title": "서울 시간 파노라마",
+        "verified": null
+      },
+      {
+        "title": "틈새미술관 (전시공간)",
+        "verified": null
+      },
+      {
+        "title": "가족 기록 편집 테이블",
+        "verified": null
+      },
+      {
+        "title": "기억 아카이브 월",
+        "verified": null
+      }
+    ],
+    "walking_distance_m": 840,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 0.279,
+    "llm_usage": {},
+    "error": null
+  },
+  {
+    "model": "llama-3.1-8b-instant",
+    "scenario_index": 6,
+    "text": "빨리 둘러보고 싶은데 뭔가 기억에 남는 것도 보고 싶어요",
+    "engine": "heuristic_fallback",
+    "reason": "Groq request failed: 400 {\"error\":{\"message\":\"Failed to generate JSON. Please adjust your prompt. See 'failed_generation' for more details.\",\"type\":\"invalid_request_error\",\"code\":\"json_validate_failed\",\"failed_generation\":\"ma",
+    "stops": [
+      {
+        "title": "현대종합싸인 (사무용품·인쇄물)",
+        "verified": null
+      }
+    ],
+    "walking_distance_m": 0,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 2.455,
+    "llm_usage": {},
+    "error": null
+  },
+  {
+    "model": "llama-3.1-8b-instant",
+    "scenario_index": 7,
+    "text": "휠체어라서 엘리베이터로만 이동 가능해요, 쉬었다 갈 곳 필요해요",
+    "engine": "heuristic_fallback",
+    "reason": "Groq request failed: 429 {\"error\":{\"message\":\"Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01ky702ga2ekq9a2zjg0at6q9v` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 3272, Re",
+    "stops": [
+      {
+        "title": "Azit Coffee (카페)",
+        "verified": null
+      },
+      {
+        "title": "COFFEE #12 (카페)",
+        "verified": null
+      }
+    ],
+    "walking_distance_m": 1630,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 0.302,
+    "llm_usage": {},
+    "error": null
+  },
+  {
+    "model": "llama-3.1-8b-instant",
+    "scenario_index": 8,
+    "text": "사진 인화하고 카메라 상담도 받고 싶어요",
+    "engine": "ai_designer",
+    "reason": "霉一中 网络 本四一中 存正。",
+    "stops": [
+      {
+        "title": "서울 시간 파노라마",
+        "verified": true
+      }
+    ],
+    "walking_distance_m": 410,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [
+      "e3-photo",
+      "e3-gap-gallery",
+      "e3-coffee12"
+    ],
+    "elapsed_sec": 0.902,
+    "llm_usage": {
+      "queue_time": 0.02558852,
+      "prompt_tokens": 2209,
+      "prompt_time": 0.146124594,
+      "completion_tokens": 202,
+      "completion_time": 0.402771087,
+      "total_tokens": 2411,
+      "total_time": 0.548895681
+    },
+    "error": null
+  },
+  {
+    "model": "llama-3.1-8b-instant",
+    "scenario_index": 9,
+    "text": "제작 상담도 받고 쉬기도 하고 구경도 하고 싶어요, 다 하고 싶어요",
+    "engine": "heuristic_fallback",
+    "reason": "Groq request failed: 429 {\"error\":{\"message\":\"Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01ky702ga2ekq9a2zjg0at6q9v` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 4854, Re",
+    "stops": [
+      {
+        "title": "제작 재료 라이브러리",
+        "verified": null
+      },
+      {
+        "title": "메이커 시연 포켓",
+        "verified": null
+      },
+      {
+        "title": "AI 제작통역 스테이션",
+        "verified": null
+      },
+      {
+        "title": "현대종합싸인 (사무용품·인쇄물)",
+        "verified": null
+      },
+      {
+        "title": "완성품 쇼케이스·픽업",
+        "verified": null
+      }
+    ],
+    "walking_distance_m": 980,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 0.287,
+    "llm_usage": {},
+    "error": null
+  },
+  {
+    "model": "llama-3.1-8b-instant",
+    "scenario_index": 10,
+    "text": "힙지로 쪽으로 갈 건데 가는 길에 뭐 좀 보고 싶어요",
+    "engine": "heuristic_fallback",
+    "reason": "Groq request failed: 429 {\"error\":{\"message\":\"Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01ky702ga2ekq9a2zjg0at6q9v` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 4483, Re",
+    "stops": [
+      {
+        "title": "서울 시간 파노라마",
+        "verified": null
+      },
+      {
+        "title": "명함랜드 1호 (사무용품·인쇄물)",
+        "verified": null
+      }
+    ],
+    "walking_distance_m": 590,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 0.307,
+    "llm_usage": {},
+    "error": null
+  },
+  {
+    "model": "llama-3.1-8b-instant",
+    "scenario_index": 11,
+    "text": "그냥 커피만 한 잔 하고 싶어요",
+    "engine": "ai_designer",
+    "reason": "커피를 마실 수 있는 곳은 없지만, 커피 맛을 본 후 커피를 마실 수 있는 곳으로 이동할 수 있습니다.",
+    "stops": [
+      {
+        "title": "제작 재료 라이브러리",
+        "verified": true
+      }
+    ],
+    "walking_distance_m": 260,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [
+      "e4-translate",
+      "e4-marking"
+    ],
+    "elapsed_sec": 0.474,
+    "llm_usage": {
+      "queue_time": 0.050836599,
+      "prompt_tokens": 424,
+      "prompt_time": 0.03294638,
+      "completion_tokens": 66,
+      "completion_time": 0.0986416,
+      "total_tokens": 490,
+      "total_time": 0.13158798
+    },
+    "error": null
+  },
+  {
+    "model": "qwen/qwen3.6-27b",
+    "scenario_index": 0,
+    "text": "쉬면서 커피도 마시고 싶고, 유모차라 계단은 피하고 싶어요",
+    "engine": "ai_designer",
+    "reason": "유모차 이동이 편한 평지 코스로 커피와 휴식 공간만 선정했습니다.",
+    "stops": [
+      {
+        "title": "Azit Coffee (카페)",
+        "verified": true
+      },
+      {
+        "title": "을지로 아뜨리애 갤러리 (전시공간)",
+        "verified": true
+      }
+    ],
+    "walking_distance_m": 0,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 4.342,
+    "llm_usage": {
+      "queue_time": 0.019713406,
+      "prompt_tokens": 2900,
+      "prompt_time": 0.200654678,
+      "completion_tokens": 2005,
+      "completion_time": 3.853974535,
+      "total_tokens": 4905,
+      "total_time": 4.054629213,
+      "completion_tokens_details": {
+        "reasoning_tokens": 1962
+      }
+    },
+    "error": null
+  },
+  {
+    "model": "qwen/qwen3.6-27b",
+    "scenario_index": 1,
+    "text": "아이랑 같이 왔는데 잠깐 볼만한 거 있을까요",
+    "engine": "ai_designer",
+    "reason": "아이와 함께 10분 안에 가볍게 구경하기 좋은 서울 시간 파노라마를 추천합니다.",
+    "stops": [
+      {
+        "title": "서울 시간 파노라마",
+        "verified": true
+      }
+    ],
+    "walking_distance_m": 180,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 3.197,
+    "llm_usage": {
+      "queue_time": 0.019033231,
+      "prompt_tokens": 345,
+      "prompt_time": 0.023595909,
+      "completion_tokens": 1394,
+      "completion_time": 2.778090415,
+      "total_tokens": 1739,
+      "total_time": 2.801686324,
+      "completion_tokens_details": {
+        "reasoning_tokens": 1352
+      }
+    },
+    "error": null
+  },
+  {
+    "model": "qwen/qwen3.6-27b",
+    "scenario_index": 2,
+    "text": "명함이랑 포스터 급하게 뽑아야 하는데 시간이 별로 없어요",
+    "engine": "heuristic_fallback",
+    "reason": "Groq request failed: 429 {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01ky702ga2ekq9a2zjg0at6q9v` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 4704, Reques",
+    "stops": [
+      {
+        "title": "AI 제작통역 스테이션",
+        "verified": null
+      },
+      {
+        "title": "메이커 시연 포켓",
+        "verified": null
+      },
+      {
+        "title": "현대종합싸인 (사무용품·인쇄물)",
+        "verified": null
+      }
+    ],
+    "walking_distance_m": 510,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 0.289,
+    "llm_usage": {},
+    "error": null
+  },
+  {
+    "model": "qwen/qwen3.6-27b",
+    "scenario_index": 3,
+    "text": "옛날 사진 보고 싶고 DDP 쪽으로 넘어갈 거예요",
+    "engine": "heuristic_fallback",
+    "reason": "Groq request failed: 429 {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01ky702ga2ekq9a2zjg0at6q9v` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 4202, Reques",
+    "stops": [
+      {
+        "title": "틈새미술관 (전시공간)",
+        "verified": null
+      },
+      {
+        "title": "AI 사진복원 스테이션",
+        "verified": null
+      },
+      {
+        "title": "가족 기록 편집 테이블",
+        "verified": null
+      },
+      {
+        "title": "한독카메라 (카메라·사진)",
+        "verified": null
+      },
+      {
+        "title": "을지로 아뜨리애 갤러리 (전시공간)",
+        "verified": null
+      }
+    ],
+    "walking_distance_m": 1880,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 0.264,
+    "llm_usage": {},
+    "error": null
+  },
+  {
+    "model": "qwen/qwen3.6-27b",
+    "scenario_index": 4,
+    "text": "I have 30 minutes, want to see some art and grab a coffee",
+    "engine": "heuristic_fallback",
+    "reason": "Groq request failed: 400 {\"error\":{\"message\":\"Failed to validate JSON. Please adjust your prompt. See 'failed_generation' for more details.\",\"type\":\"invalid_request_error\",\"code\":\"json_validate_failed\",\"failed_generation\":\"\"}",
+    "stops": [
+      {
+        "title": "기억 아카이브 월",
+        "verified": null
+      },
+      {
+        "title": "서울 시간 파노라마",
+        "verified": null
+      },
+      {
+        "title": "명함랜드 1호 (사무용품·인쇄물)",
+        "verified": null
+      }
+    ],
+    "walking_distance_m": 920,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 4.513,
+    "llm_usage": {},
+    "error": null
+  },
+  {
+    "model": "qwen/qwen3.6-27b",
+    "scenario_index": 5,
+    "text": "그냥 아무거나 구경하고 싶어요",
+    "engine": "heuristic_fallback",
+    "reason": "Groq request failed: 429 {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01ky702ga2ekq9a2zjg0at6q9v` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 5556, Reques",
+    "stops": [
+      {
+        "title": "명함랜드 1호 (사무용품·인쇄물)",
+        "verified": null
+      },
+      {
+        "title": "서울 시간 파노라마",
+        "verified": null
+      },
+      {
+        "title": "틈새미술관 (전시공간)",
+        "verified": null
+      },
+      {
+        "title": "가족 기록 편집 테이블",
+        "verified": null
+      },
+      {
+        "title": "기억 아카이브 월",
+        "verified": null
+      }
+    ],
+    "walking_distance_m": 840,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 0.305,
+    "llm_usage": {},
+    "error": null
+  },
+  {
+    "model": "qwen/qwen3.6-27b",
+    "scenario_index": 6,
+    "text": "빨리 둘러보고 싶은데 뭔가 기억에 남는 것도 보고 싶어요",
+    "engine": "heuristic_fallback",
+    "reason": "Groq request failed: 400 {\"error\":{\"message\":\"Failed to validate JSON. Please adjust your prompt. See 'failed_generation' for more details.\",\"type\":\"invalid_request_error\",\"code\":\"json_validate_failed\",\"failed_generation\":\"\"}",
+    "stops": [
+      {
+        "title": "현대종합싸인 (사무용품·인쇄물)",
+        "verified": null
+      }
+    ],
+    "walking_distance_m": 0,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 4.373,
+    "llm_usage": {},
+    "error": null
+  },
+  {
+    "model": "qwen/qwen3.6-27b",
+    "scenario_index": 7,
+    "text": "휠체어라서 엘리베이터로만 이동 가능해요, 쉬었다 갈 곳 필요해요",
+    "engine": "heuristic_fallback",
+    "reason": "Groq request failed: 429 {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01ky702ga2ekq9a2zjg0at6q9v` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 6387, Reques",
+    "stops": [
+      {
+        "title": "Azit Coffee (카페)",
+        "verified": null
+      },
+      {
+        "title": "COFFEE #12 (카페)",
+        "verified": null
+      }
+    ],
+    "walking_distance_m": 1630,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 0.383,
+    "llm_usage": {},
+    "error": null
+  },
+  {
+    "model": "qwen/qwen3.6-27b",
+    "scenario_index": 8,
+    "text": "사진 인화하고 카메라 상담도 받고 싶어요",
+    "engine": "heuristic_fallback",
+    "reason": "Groq request failed: 429 {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01ky702ga2ekq9a2zjg0at6q9v` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 5867, Reques",
+    "stops": [
+      {
+        "title": "기억 아카이브 월",
+        "verified": null
+      },
+      {
+        "title": "AI 사진복원 스테이션",
+        "verified": null
+      },
+      {
+        "title": "한독카메라 (카메라·사진)",
+        "verified": null
+      }
+    ],
+    "walking_distance_m": 510,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 0.348,
+    "llm_usage": {},
+    "error": null
+  },
+  {
+    "model": "qwen/qwen3.6-27b",
+    "scenario_index": 9,
+    "text": "제작 상담도 받고 쉬기도 하고 구경도 하고 싶어요, 다 하고 싶어요",
+    "engine": "heuristic_fallback",
+    "reason": "Groq request failed: 429 {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01ky702ga2ekq9a2zjg0at6q9v` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 5361, Reques",
+    "stops": [
+      {
+        "title": "제작 재료 라이브러리",
+        "verified": null
+      },
+      {
+        "title": "메이커 시연 포켓",
+        "verified": null
+      },
+      {
+        "title": "AI 제작통역 스테이션",
+        "verified": null
+      },
+      {
+        "title": "현대종합싸인 (사무용품·인쇄물)",
+        "verified": null
+      },
+      {
+        "title": "완성품 쇼케이스·픽업",
+        "verified": null
+      }
+    ],
+    "walking_distance_m": 980,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 0.32,
+    "llm_usage": {},
+    "error": null
+  },
+  {
+    "model": "qwen/qwen3.6-27b",
+    "scenario_index": 10,
+    "text": "힙지로 쪽으로 갈 건데 가는 길에 뭐 좀 보고 싶어요",
+    "engine": "heuristic_fallback",
+    "reason": "Groq request failed: 429 {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01ky702ga2ekq9a2zjg0at6q9v` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 4831, Reques",
+    "stops": [
+      {
+        "title": "서울 시간 파노라마",
+        "verified": null
+      },
+      {
+        "title": "명함랜드 1호 (사무용품·인쇄물)",
+        "verified": null
+      }
+    ],
+    "walking_distance_m": 590,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 0.303,
+    "llm_usage": {},
+    "error": null
+  },
+  {
+    "model": "qwen/qwen3.6-27b",
+    "scenario_index": 11,
+    "text": "그냥 커피만 한 잔 하고 싶어요",
+    "engine": "heuristic_fallback",
+    "reason": "AI가 고른 장소가 전부 검증에서 탈락해 기존 알고리즘으로 대체",
+    "stops": [],
+    "walking_distance_m": null,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 2.287,
+    "llm_usage": {},
+    "error": null
+  }
+]

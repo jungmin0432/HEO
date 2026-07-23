@@ -1,0 +1,184 @@
+[
+  {
+    "scenario_index": 0,
+    "text": "쉬면서 커피도 마시고 싶고, 유모차라 계단은 피하고 싶어요",
+    "engine": "ai_designer",
+    "reason": "쉬면서 커피도 마실 수 있는 곳을 포함했습니다",
+    "stops": [
+      "Azit Coffee (카페)",
+      "을지로 아뜨리애 갤러리 (전시공간)"
+    ],
+    "walking_distance_m": 0,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 1.172,
+    "error": null
+  },
+  {
+    "scenario_index": 1,
+    "text": "아이랑 같이 왔는데 잠깐 볼만한 거 있을까요",
+    "engine": "ai_designer",
+    "reason": "아이와 함께 볼만한 곳",
+    "stops": [
+      "서울 시간 파노라마"
+    ],
+    "walking_distance_m": 180,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 0.698,
+    "error": null
+  },
+  {
+    "scenario_index": 2,
+    "text": "명함이랑 포스터 급하게 뽑아야 하는데 시간이 별로 없어요",
+    "engine": "ai_designer",
+    "reason": "명함과 포스터를 빠르게 뽑을 수 있는 곳",
+    "stops": [
+      "현대종합싸인 (사무용품·인쇄물)"
+    ],
+    "walking_distance_m": 510,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 0.607,
+    "error": null
+  },
+  {
+    "scenario_index": 3,
+    "text": "옛날 사진 보고 싶고 DDP 쪽으로 넘어갈 거예요",
+    "engine": "ai_designer",
+    "reason": "옛날 사진을 볼 수 있는 곳을 포함하여 DDP 쪽으로 이동",
+    "stops": [
+      "서울 시간 파노라마",
+      "기억 아카이브 월",
+      "AI 사진복원 스테이션",
+      "도시 시간중첩 월"
+    ],
+    "walking_distance_m": 2700,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 0.963,
+    "error": null
+  },
+  {
+    "scenario_index": 4,
+    "text": "I have 30 minutes, want to see some art and grab a coffee",
+    "engine": "ai_designer",
+    "reason": "30분 안에 미술관과 커피를 즐길 수 있습니다.",
+    "stops": [
+      "틈새미술관 (전시공간)"
+    ],
+    "walking_distance_m": 260,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [
+      "e3-coffee12"
+    ],
+    "elapsed_sec": 0.818,
+    "error": null
+  },
+  {
+    "scenario_index": 5,
+    "text": "그냥 아무거나 구경하고 싶어요",
+    "engine": "ai_designer",
+    "reason": "근처에 위치한 다양한 매장을 구경할 수 있습니다.",
+    "stops": [
+      "서울 시간 파노라마",
+      "명함랜드 1호 (사무용품·인쇄물)",
+      "캐치문",
+      "달고나"
+    ],
+    "walking_distance_m": 180,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 0.7,
+    "error": null
+  },
+  {
+    "scenario_index": 6,
+    "text": "빨리 둘러보고 싶은데 뭔가 기억에 남는 것도 보고 싶어요",
+    "engine": "ai_designer",
+    "reason": "가장 가까운 곳에 위치해 있습니다.",
+    "stops": [
+      "현대종합싸인 (사무용품·인쇄물)"
+    ],
+    "walking_distance_m": 0,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 0.68,
+    "error": null
+  },
+  {
+    "scenario_index": 7,
+    "text": "휠체어라서 엘리베이터로만 이동 가능해요, 쉬었다 갈 곳 필요해요",
+    "engine": "heuristic_fallback",
+    "reason": "Groq request failed: 429 {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01ky702ga2ekq9a2zjg0at6q9v` service tier `on_demand` on tokens per minute (TPM): Limit 12000, Used 1012",
+    "stops": [
+      "Azit Coffee (카페)",
+      "COFFEE #12 (카페)"
+    ],
+    "walking_distance_m": 1630,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 0.409,
+    "error": null
+  },
+  {
+    "scenario_index": 8,
+    "text": "사진 인화하고 카메라 상담도 받고 싶어요",
+    "engine": "ai_designer",
+    "reason": "사진 인화와 카메라 상담이 가능합니다",
+    "stops": [
+      "한독카메라 (카메라·사진)",
+      "AI 사진복원 스테이션"
+    ],
+    "walking_distance_m": 770,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 0.758,
+    "error": null
+  },
+  {
+    "scenario_index": 9,
+    "text": "제작 상담도 받고 쉬기도 하고 구경도 하고 싶어요, 다 하고 싶어요",
+    "engine": "heuristic_fallback",
+    "reason": "Groq request failed: 429 {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01ky702ga2ekq9a2zjg0at6q9v` service tier `on_demand` on tokens per minute (TPM): Limit 12000, Used 1083",
+    "stops": [
+      "제작 재료 라이브러리",
+      "메이커 시연 포켓",
+      "AI 제작통역 스테이션",
+      "현대종합싸인 (사무용품·인쇄물)",
+      "완성품 쇼케이스·픽업"
+    ],
+    "walking_distance_m": 980,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 0.35,
+    "error": null
+  },
+  {
+    "scenario_index": 10,
+    "text": "힙지로 쪽으로 갈 건데 가는 길에 뭐 좀 보고 싶어요",
+    "engine": "ai_designer",
+    "reason": "힙지로 쪽으로 갈 때 볼 만한 곳",
+    "stops": [
+      "서울 시간 파노라마",
+      "캐치문"
+    ],
+    "walking_distance_m": 590,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 0.573,
+    "error": null
+  },
+  {
+    "scenario_index": 11,
+    "text": "그냥 커피만 한 잔 하고 싶어요",
+    "engine": "heuristic_fallback",
+    "reason": "AI가 고른 장소가 전부 검증에서 탈락해 기존 알고리즘으로 대체",
+    "stops": [],
+    "walking_distance_m": null,
+    "dropped_hallucinated": [],
+    "dropped_over_budget": [],
+    "elapsed_sec": 0.495,
+    "error": null
+  }
+]

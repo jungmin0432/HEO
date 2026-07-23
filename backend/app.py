@@ -1,12 +1,21 @@
 from __future__ import annotations
 
 import os
+from pathlib import Path
+
+_env_path = Path(__file__).resolve().parent / ".env"
+if _env_path.exists():
+    for _line in _env_path.read_text(encoding="utf-8").splitlines():
+        if "=" in _line and not _line.strip().startswith("#"):
+            _key, _value = _line.split("=", 1)
+            os.environ.setdefault(_key.strip(), _value.strip())
 
 from flask import Flask, jsonify, render_template, request, send_from_directory
 from flask_cors import CORS
 
 from route_engine import gate_information, recommend_route
 from ai_interpreter import interpret_route_request
+from ai_course_designer import design_course
 
 try:
     from route_database import database_status, list_stores, stores_open_now
@@ -22,7 +31,7 @@ DEMO_NOW = "2026-07-22T14:00:00+09:00"
 
 
 def create_app() -> Flask:
-    app = Flask(__name__, template_folder="web")
+    app = Flask(__name__, template_folder=str(Path(__file__).resolve().parent / "web"))
     CORS(app, resources={r"/api/*": {"origins": "*"}})
 
     @app.get("/")
@@ -140,6 +149,37 @@ def create_app() -> Flask:
             **({"notice": interpretation["notice"]} if "notice" in interpretation else {}),
         }
         status = 200 if result.get("route") else 422
+        return jsonify(result), status
+
+    @app.post("/api/ai/routes/design")
+    def ai_design():
+        """AI가 직접 어떤 장소를 어떤 순서로 넣을지 설계한다 (음성/자유문장 전용).
+
+        interpret_route_request()는 문장을 minutes/purpose/destination 같은
+        조건으로만 바꾸고 실제 코스는 결정적 알고리즘이 계산하지만, 이 엔드포인트는
+        LLM이 실제 매장 목록·시간예산을 보고 코스 자체를 제안한 뒤 결정적
+        검증기가 재계산·검증한다 (route_engine.recommend_route가 폴백).
+        """
+        payload = request.get_json(silent=True) or {}
+        text = (payload.get("text") or "").strip()
+        if not text:
+            return jsonify({"error": "text is required"}), 400
+        gate_token = payload.get("gate_token") or "E3-01"
+        minutes = payload.get("minutes") if payload.get("minutes") in (10, 30, 60, 90) else 60
+        purpose = payload.get("purpose") if payload.get("purpose") in {"look", "memory", "make", "move", "rest"} else "look"
+        destination = payload.get("destination") or None
+        accessible = bool(payload.get("accessible", False))
+        result = design_course(
+            gate_token=gate_token,
+            minutes=minutes,
+            purpose=purpose,
+            destination=destination,
+            accessible=accessible,
+            text=text,
+            now_value=payload.get("now") or DEMO_NOW,
+        )
+        route = result.get("route") or {}
+        status = 200 if route.get("stops") else 422
         return jsonify(result), status
 
     @app.errorhandler(ValueError)
