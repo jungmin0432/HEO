@@ -47,7 +47,13 @@ class OrderTranslator:
         missing = compute_missing(order)
         order["missing_slots"] = missing
 
-        cost = config.estimate_cost(self.model, res.input_tokens, res.output_tokens)
+        # The rule-based stub makes no paid API call, so it costs nothing —
+        # pricing it against the configured paid model would be misleading.
+        cost = (
+            config.CostBreakdown(res.input_tokens, res.output_tokens, 0.0, 0.0)
+            if res.backend == "stub"
+            else config.estimate_cost(self.model, res.input_tokens, res.output_tokens)
+        )
         meta = TranslationMeta(
             latency_ms=latency_ms,
             input_tokens=res.input_tokens,
