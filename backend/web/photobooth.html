@@ -441,8 +441,44 @@ function startStream(){
       state.stream = stream;
       video.srcObject = stream;
       video.style.transform = state.facing === 'user' ? 'scaleX(-1)' : 'none';
+      setTimeout(function(){ diagnoseBlackFrame(stream); }, 2500);
     })
     .catch(function(){ showCamError(); });
+}
+
+// If the preview stays black even though permission was granted, show real
+// diagnostic numbers directly on screen (track label/settings, video
+// readyState/size, measured brightness) instead of a generic message --
+// this is what actually tells us whether it's a wrong-device, frozen-frame,
+// or driver-level problem, without needing devtools.
+function diagnoseBlackFrame(stream){
+  if (!state.shots || state.shots.length) return; // already capturing fine
+  if ($('#screen-cam').className.indexOf('show') === -1) return; // left the screen
+  var vw = video.videoWidth, vh = video.videoHeight;
+  var brightness = -1;
+  if (vw && vh) {
+    try {
+      var c = document.createElement('canvas');
+      c.width = 16; c.height = 16;
+      var cx = c.getContext('2d');
+      cx.drawImage(video, 0, 0, 16, 16);
+      var data = cx.getImageData(0, 0, 16, 16).data;
+      var sum = 0;
+      for (var i = 0; i < data.length; i += 4) sum += data[i] + data[i+1] + data[i+2];
+      brightness = Math.round(sum / (data.length / 4));
+    } catch (e) { brightness = -2; }
+  }
+  if (vw && vh && brightness > 12) return; // real picture is showing, nothing to report
+  var track = stream.getVideoTracks()[0];
+  var settings = track ? track.getSettings() : {};
+  var lines = [
+    '카메라 미리보기가 비어 있어요. 아래 정보를 캡처해서 보내주세요.',
+    '장치: ' + (track ? track.label : '없음'),
+    '해상도: ' + vw + 'x' + vh + ' / readyState=' + video.readyState,
+    '측정 밝기(0~255): ' + brightness,
+    '트랙 설정: ' + JSON.stringify(settings)
+  ];
+  showCamError(lines.join('<br/>'));
 }
 
 function showCamError(message){
