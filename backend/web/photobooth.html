@@ -416,18 +416,22 @@ function isVirtualLabel(label){
   return VIRTUAL_CAM_HINTS.some(function(hint){ return l.indexOf(hint) !== -1; });
 }
 
-function pickRealCamera(stream){
-  if (!navigator.mediaDevices.enumerateDevices) return Promise.resolve(stream);
-  var track = stream.getVideoTracks()[0];
-  if (!track || !isVirtualLabel(track.label)) return Promise.resolve(stream);
-  return navigator.mediaDevices.enumerateDevices().then(function(devices){
-    var real = devices.find(function(d){ return d.kind === 'videoinput' && !isVirtualLabel(d.label); });
-    if (!real) return stream;
-    stream.getTracks().forEach(function(t){ t.stop(); });
+// Try each non-virtual device in turn. Only stop the fallback/virtual
+// stream once a real one has actually started -- stopping it first and
+// then failing to get a replacement was the earlier bug (left the video
+// element bound to a dead track that still "shows" a frozen black frame).
+function swapToRealCamera(devices, fallbackStream){
+  var reals = devices.filter(function(d){ return d.kind === 'videoinput' && !isVirtualLabel(d.label); });
+  function tryNext(i){
+    if (i >= reals.length) return fallbackStream;
     return navigator.mediaDevices.getUserMedia({
-      video: { deviceId: { exact: real.deviceId } }, audio: false
-    });
-  }).catch(function(){ return stream; });
+      video: { deviceId: { exact: reals[i].deviceId } }, audio: false
+    }).then(function(newStream){
+      if (fallbackStream) fallbackStream.getTracks().forEach(function(t){ t.stop(); });
+      return newStream;
+    }).catch(function(){ return tryNext(i + 1); });
+  }
+  return tryNext(0);
 }
 
 function startStream(){
@@ -435,15 +439,36 @@ function startStream(){
   if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia){
     showCamError(); return;
   }
-  navigator.mediaDevices.getUserMedia({ video: { facingMode: state.facing }, audio:false })
-    .then(function(stream){ return pickRealCamera(stream); })
+  var enumerate = navigator.mediaDevices.enumerateDevices
+    ? navigator.mediaDevices.enumerateDevices().catch(function(){ return []; })
+    : Promise.resolve([]);
+
+  enumerate.then(function(devices){
+    // Permission was likely already granted in an earlier visit, so device
+    // labels may already be populated -- go straight for a real camera
+    // instead of touching the virtual one at all.
+    var knownReal = devices.find(function(d){ return d.kind === 'videoinput' && d.label && !isVirtualLabel(d.label); });
+    var constraints = knownReal
+      ? { video: { deviceId: { exact: knownReal.deviceId } }, audio: false }
+      : { video: { facingMode: state.facing }, audio: false };
+    return navigator.mediaDevices.getUserMedia(constraints).then(function(stream){
+      var track = stream.getVideoTracks()[0];
+      if (!track || !isVirtualLabel(track.label)) return stream;
+      // Got the virtual one anyway (e.g. labels were still blank) -- swap.
+      return navigator.mediaDevices.enumerateDevices()
+        .then(function(devices2){ return swapToRealCamera(devices2, stream); })
+        .catch(function(){ return stream; });
+    });
+  })
     .then(function(stream){
       state.stream = stream;
       video.srcObject = stream;
       video.style.transform = state.facing === 'user' ? 'scaleX(-1)' : 'none';
       setTimeout(function(){ diagnoseBlackFrame(stream); }, 2500);
     })
-    .catch(function(){ showCamError(); });
+    .catch(function(err){
+      showCamError('카메라를 열지 못했어요.<br/>' + (err && err.name ? err.name + ': ' + (err.message || '') : ''));
+    });
 }
 
 // If the preview stays black even though permission was granted, show real
