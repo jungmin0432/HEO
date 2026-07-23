@@ -86,7 +86,7 @@ def _unverified_store_pois() -> list[dict]:
         out.append({
             "id": f"real-{i:03d}",
             "title": name,
-            "detail": "서울시설공단 을지로 지하도상가 공식 입점 상호 (실명, 위치는 미검증 가정)",
+            "detail": "지하상가 입점 상호",
             "kind": "shop",
             "purposes": purpose,
             "zone": zone,
