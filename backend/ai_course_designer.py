@@ -61,6 +61,38 @@ def _real_store_names() -> list[str]:
 
 REAL_STORE_NAMES = _real_store_names()
 
+_CATEGORY_PATH = Path(__file__).resolve().parent / "store_categories.json"
+
+
+def _store_categories() -> dict[str, str]:
+    """Name -> category, guessed once offline from the name alone by an LLM
+    (see classify_store_names.py) and cached. Never re-inferred per request."""
+    if not _CATEGORY_PATH.exists():
+        return {}
+    try:
+        return json.loads(_CATEGORY_PATH.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return {}
+
+
+STORE_CATEGORIES = _store_categories()
+
+# category -> (dwell_minutes, purposes). Mirrors the same reasoning used for
+# the 16 verified POIs (cafes/services get real sit-down time, quick
+# counter-service stays short) rather than one flat number for every shop.
+_CATEGORY_PROFILE = {
+    "카페": (15, ("rest",)),
+    "식당": (20, ("rest",)),
+    "미용": (20, ("rest",)),
+    "빵집": (6, ("look", "make")),
+    "인쇄": (6, ("make",)),
+    "광고": (6, ("make",)),
+    "카메라": (8, ("memory", "make")),
+    "사진": (8, ("memory", "make")),
+    "미술": (10, ("look", "memory")),
+}
+_DEFAULT_PROFILE = (8, ("look", "make"))
+
 
 class AIDesignerUnavailable(RuntimeError):
     pass
@@ -68,7 +100,6 @@ class AIDesignerUnavailable(RuntimeError):
 
 _ZONE_ROTATION = ("E1", "E3", "E4", "DDP")
 _ZONE_NODE = {"E1": "E1_HALL", "E3": "E3_CENTER", "E4": "E4_CENTER", "DDP": "DDP_GATE"}
-_REST_KEYWORDS = ("카페", "커피", "COFFEE", "다방", "Coffee")
 
 
 def _unverified_store_pois() -> list[dict]:
@@ -82,16 +113,18 @@ def _unverified_store_pois() -> list[dict]:
     out = []
     for i, name in enumerate(REAL_STORE_NAMES):
         zone = _ZONE_ROTATION[i % len(_ZONE_ROTATION)]
-        purpose = ("rest",) if any(k in name for k in _REST_KEYWORDS) else ("look", "make")
+        category = STORE_CATEGORIES.get(name)
+        dwell, purpose = _CATEGORY_PROFILE.get(category, _DEFAULT_PROFILE)
+        detail = f"{category} (이름으로 추정)" if category else "지하상가 입점 상호"
         out.append({
             "id": f"real-{i:03d}",
             "title": name,
-            "detail": "지하상가 입점 상호",
+            "detail": detail,
             "kind": "shop",
             "purposes": purpose,
             "zone": zone,
             "node": _ZONE_NODE[zone],
-            "dwell_minutes": 8,
+            "dwell_minutes": dwell,
             "status": "partner_store",
             "status_label": "기존 점포",
             "location_verified": False,
