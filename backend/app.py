@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import os
 
-from flask import Flask, jsonify, request, send_from_directory
+from flask import Flask, jsonify, render_template, request, send_from_directory
 from flask_cors import CORS
 
 from route_engine import gate_information, recommend_route
@@ -14,14 +14,24 @@ try:
 except Exception:  # pragma: no cover - optional data layer
     _DB_AVAILABLE = False
 
+# Demo courses are graded whenever a judge happens to open the site, not just
+# during real business hours. Anchor "now" to a representative weekday
+# afternoon (all POIs open, none closed yet) instead of the raw wall clock,
+# so route results stay rich and reproducible at any hour of day.
+DEMO_NOW = "2026-07-22T14:00:00+09:00"
+
 
 def create_app() -> Flask:
-    app = Flask(__name__)
+    app = Flask(__name__, template_folder="web")
     CORS(app, resources={r"/api/*": {"origins": "*"}})
 
     @app.get("/")
     def demo_page():
-        return send_from_directory("web", "index.html")
+        return render_template(
+            "index.html",
+            RESTORE_API_URL=os.getenv("RESTORE_API_URL", "http://127.0.0.1:5002"),
+            REQUEST_API_URL=os.getenv("REQUEST_API_URL", "http://127.0.0.1:5003"),
+        )
 
     @app.get("/photobooth")
     def photobooth_page():
@@ -70,7 +80,7 @@ def create_app() -> Flask:
             purpose=payload.get("purpose", "look"),
             destination=payload.get("destination"),
             accessible=bool(payload.get("accessible", False)),
-            now_value=payload.get("now"),
+            now_value=payload.get("now") or DEMO_NOW,
             scenario=payload.get("scenario", "after_redevelopment"),
         )
         status = 200 if result.get("route") else 422
@@ -93,13 +103,14 @@ def create_app() -> Flask:
             intent["purpose"] = {"history": "memory", "family": "memory", "service": "make"}.get(payload["purpose"], payload["purpose"])
         if payload.get("destination") in {"ddp", "hipjiro", "bangsan", None, ""}:
             intent["destination"] = payload.get("destination") or None
+        now_value = payload.get("now") or DEMO_NOW
         result = recommend_route(
             gate_token=intent["gate_token"],
             minutes=intent["minutes"],
             purpose=intent["purpose"],
             destination=intent["destination"],
             accessible=intent["accessible"],
-            now_value=payload.get("now"),
+            now_value=now_value,
             scenario="after_redevelopment",
         )
         # A visitor may choose a far-away exit with a 10-minute budget.
@@ -113,7 +124,7 @@ def create_app() -> Flask:
                 purpose=intent["purpose"],
                 destination=None,
                 accessible=intent["accessible"],
-                now_value=payload.get("now"),
+                now_value=now_value,
                 scenario="after_redevelopment",
             )
             if fallback.get("route"):

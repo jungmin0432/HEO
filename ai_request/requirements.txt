@@ -1,0 +1,9 @@
+# 제작통역 코어 + 평가 하네스
+anthropic>=0.116.0        # Claude API (제작통역 LLM 백엔드)
+python-dotenv>=1.0.0      # .env 로딩
+fastapi>=0.110.0          # 웹 데모 백엔드 (backend/app.py, ASGI)
+uvicorn[standard]>=0.29.0 # ASGI 서버
+flask>=3.0.0              # 프로토타입 데모 서버 (flask_server.py)
+pydantic>=2.6.0           # 주문 스키마 검증
+openai>=1.30.0           # 로컬 GPU LLM(Ollama/vLLM) OpenAI 호환 호출 · (선택)Whisper 음성
+gunicorn>=21.2.0          # Render 배포용 WSGI 서버
