@@ -166,7 +166,9 @@ def create_app() -> Flask:
             return jsonify({"error": "text is required"}), 400
         gate_token = payload.get("gate_token") or "E3-01"
         minutes = payload.get("minutes") if payload.get("minutes") in (10, 30, 60, 90) else 60
-        purpose = payload.get("purpose") if payload.get("purpose") in {"look", "memory", "make", "move", "rest"} else "look"
+        raw_purpose = payload.get("purpose")
+        purpose_alias = {"history": "memory", "family": "memory", "service": "make"}.get(raw_purpose, raw_purpose)
+        purpose = purpose_alias if purpose_alias in {"look", "memory", "make", "move", "rest"} else "look"
         destination = payload.get("destination") or None
         accessible = bool(payload.get("accessible", False))
         result = design_course(

@@ -865,8 +865,8 @@ $all(".map-node.gate").forEach(function(node){
     var btn = this;
     clearError();
     btn.disabled = true;
-    $("#ctaLabel").textContent = "코스를 계산하고 있어요…";
-    fetch(API_ROUTE + "/api/ai/routes/recommend", {
+    $("#ctaLabel").textContent = "AI가 코스를 설계하고 있어요…";
+    fetch(API_ROUTE + "/api/ai/routes/design", {
       method: "POST", headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ gate_token: state.gate, text: buildFreeText(), minutes: state.minutes, purpose: state.purpose, destination: state.destination || null })
     })
